@@ -26,7 +26,7 @@ He follows `dev` branch evolution and regularly ensures his code still works by 
 $(featureName) git rebase dev
 ```
 
-When his feature development is complete, he does a last rebase as described bellow.
+When his feature development is complete, he does a last rebase as described above.
 Thanks to this :
 
 - he ensures that the maintainer will be able to merge easily

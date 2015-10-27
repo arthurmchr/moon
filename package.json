@@ -34,7 +34,7 @@
     "autoprefixer": "^6.0.3",
     "chokidar": "^1.2.0",
     "cssnano": "^3.3.1",
-    "eslint": "^1.7.2",
+    "eslint": "^1.7.3",
     "jspm": "^0.16.13",
     "live-server": "^0.8.2",
     "parallelshell": "^2.0.0",
