@@ -14,6 +14,7 @@ const fontPath = require('postcss-fontpath');
 const clearFix = require('postcss-clearfix');
 const position = require('postcss-position');
 const size = require('postcss-size');
+const singleCharset = require('postcss-single-charset');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -38,7 +39,8 @@ const plugins = [
     size,
     autoprefixer({
         browsers: '> 1%'
-    })
+    }),
+    singleCharset
 ];
 
 if (env === 'production') plugins.push(cssnano);
