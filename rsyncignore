@@ -2,12 +2,12 @@
 config.js
 index.html.source
 jspm_packages
+media/css/README.md
 media/css/base
 media/css/components
 media/css/layout
 media/css/main.css
 media/css/pages
-media/css/README.md
 media/css/utils
 media/css/vendor
 media/js/main.js

@@ -13,8 +13,10 @@ const mediaMinMax = require('postcss-media-minmax');
 const fontPath = require('postcss-fontpath');
 const clearFix = require('postcss-clearfix');
 const position = require('postcss-position');
+const forLoop = require('postcss-for');
 const size = require('postcss-size');
 const singleCharset = require('postcss-single-charset');
+const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -29,6 +31,7 @@ const plugins = [
     }),
     url,
     customProperties,
+    forLoop,
     nested,
     mixins,
     customMedia,
@@ -40,7 +43,8 @@ const plugins = [
     autoprefixer({
         browsers: '> 1%'
     }),
-    singleCharset
+    singleCharset,
+    reporter
 ];
 
 if (env === 'production') plugins.push(cssnano);
@@ -60,8 +64,6 @@ function build() {
     .then((result)=> {
         fs.writeFileSync(outputCss, result.css);
         if (result.map) fs.writeFileSync(`${outputCss}.map`, result.map);
-
-        process.exit();
     });
 }
 

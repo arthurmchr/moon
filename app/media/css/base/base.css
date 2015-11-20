@@ -6,7 +6,7 @@ html {
 *::before,
 *::after,
 input[type="search"] {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
@@ -17,5 +17,8 @@ body {
 
 a {
     color: inherit;
-    text-decoration: inherit;
+}
+
+img {
+    vertical-align: top;
 }
