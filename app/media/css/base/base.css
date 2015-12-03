@@ -15,10 +15,28 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    color: inherit;
-}
-
 img {
     vertical-align: top;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    vertical-align: top;
+
+    background-color: inherit;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+
+    background-color: black;
 }

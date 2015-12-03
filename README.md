@@ -6,7 +6,10 @@ npm install
 jspm install
 ```
 
-```npm run watch``` or ```npm run build``` or ```npm run deploy```
+Then 3 commands are available :
+- `npm run watch` watch compiled files and start an HTTP server with CSS livereload
+- `npm run build` clean and build needed files (HTML / CSS / JS)
+- `npm run deploy` same as build but copy all needed files in a `dir` directory
 
 # Git branch workflow
 
@@ -20,7 +23,7 @@ $(featureName) git add -A
 $(featureName) git commit -m "commit message"
 ```
 
-He follows `dev` branch evolution and regularly ensures his code still works by rebasing his branch `featureName` on branch `dev` :
+He follows `dev` branch evolution and regularly ensures that his code still works by rebasing his branch `featureName` on branch `dev` :
 
 ```
 $(featureName) git rebase dev
@@ -56,7 +59,7 @@ $(master) git merge --no-ff dev
 
 ## Hotfixes
 
-If last master version needs hotfixes, we can do this fix directly on it, and then before a new stable version release we will do :
+If last master version needs hotfix, we can do this fix directly on it, and then before a new stable version release we will do :
 
 ```
 $(dev) git merge --no-ff master
