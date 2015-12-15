@@ -15,4 +15,5 @@ chokidar.watch(path.join(__dirname, '../app/media/js/**/*.js'), {
     const message = formatter(report.results);
 
     if (message) console.log(message);
+    else console.log('Lint', file);
 });

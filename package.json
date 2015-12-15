@@ -35,7 +35,7 @@
     "chokidar": "^1.4.1",
     "cssnano": "^3.4.0",
     "eslint": "^1.10.3",
-    "jspm": "^0.16.15",
+    "jspm": "^0.16.18",
     "live-server": "^0.9.0",
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.12",
