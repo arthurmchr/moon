@@ -31,14 +31,14 @@
     "PostCSS"
   ],
   "devDependencies": {
-    "autoprefixer": "^6.1.2",
+    "autoprefixer": "^6.2.1",
     "chokidar": "^1.4.1",
     "cssnano": "^3.4.0",
     "eslint": "^1.10.3",
-    "jspm": "^0.16.18",
+    "jspm": "^0.16.19",
     "live-server": "^0.9.0",
     "parallelshell": "^2.0.0",
-    "postcss": "^5.0.12",
+    "postcss": "^5.0.13",
     "postcss-clearfix": "^0.2.0",
     "postcss-custom-media": "^5.0.0",
     "postcss-custom-properties": "^5.0.0",
