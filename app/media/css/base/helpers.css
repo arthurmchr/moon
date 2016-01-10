@@ -1,3 +1,15 @@
 .h-clearfix {
     clear: fix;
 }
+
+.h-inline-block {
+    display: inline-block;
+}
+
+.h-full-width {
+    width: 100%;
+}
+
+.h-full-height {
+    height: 100%;
+}
