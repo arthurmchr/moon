@@ -15,10 +15,11 @@ Then 3 commands are available :
 
 ## Features
 
-When developers start a new feature or a bugfix, he creates a new branch from `dev` :
+When developer starts a new feature or a bugfix, he creates a new branch from `dev` :
 
 ```
 $(dev) git checkout -b featureName
+...
 $(featureName) git add -A
 $(featureName) git commit -m "commit message"
 ```
@@ -29,7 +30,7 @@ He follows `dev` branch evolution and regularly ensures that his code still work
 $(featureName) git rebase dev
 ```
 
-When his feature is complete, he does a last rebase as described above. Thanks to this :
+When his feature is completed, he does a last rebase as described above. Thanks to this :
 
 - he ensures that the maintainer will be able to merge easily
 - he checks that his code is compliant with `dev` branch
@@ -40,7 +41,7 @@ The maintainer can now merge this branch in `dev` without conflicts :
 $(dev) git merge --no-ff featureName
 ```
 
-When it is done, developer can delete his branch :
+When this is done, developer can delete his branch :
 
 ```
 $(dev) git branch -d featureName
