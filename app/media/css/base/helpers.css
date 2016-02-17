@@ -1,9 +1,17 @@
 .h-clearfix {
-    clear: fix !important;
+    clear: fix;
 }
 
 .h-display-inline-block {
     display: inline-block !important;
+}
+
+.h-display-none {
+    display: none !important;
+}
+
+.h-visibility-hidden {
+    visibility: hidden !important;
 }
 
 .h-full-width {
@@ -18,24 +26,24 @@
     text-align: left !important;
 }
 
-.h-align-right {
-    text-align: right !important;
-}
-
 .h-align-center {
     text-align: center !important;
+}
+
+.h-align-right {
+    text-align: right !important;
 }
 
 .h-no-margin {
     margin: 0 !important;
 }
 
-.h-no-margin-top {
-    margin-top: 0 !important;
-}
-
 .h-no-margin-bottom {
     margin-bottom: 0 !important;
+}
+
+.h-no-margin-top {
+    margin-top: 0 !important;
 }
 
 .h-float-right {
@@ -52,4 +60,20 @@
 
 .h-no-border-bottom {
     border-bottom: none !important;
+}
+
+.h-position-absolute {
+    position: absolute !important;
+}
+
+.h-right-zero {
+    right: 0 !important;
+}
+
+.h-overflow-hidden {
+    overflow: hidden !important;
+}
+
+.h-no-pointer-events {
+    pointer-events: none !important;
 }

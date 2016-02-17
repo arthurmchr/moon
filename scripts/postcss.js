@@ -3,7 +3,7 @@ const path = require('path');
 const chokidar = require('chokidar');
 
 const postcss = require('postcss');
-const atImport = require('postcss-import');
+const easyImport = require('postcss-easy-import');
 const url = require('postcss-url');
 const customProperties = require('postcss-custom-properties');
 const nested = require('postcss-nested');
@@ -26,13 +26,13 @@ const outputCss = path.join(__dirname, '../app/media/css/bundle.css');
 const env = process.env.NODE_ENV;
 
 const plugins = [
-    atImport({
+    easyImport({
         glob: true
     }),
     url,
-    customProperties,
     forLoop,
     mixins,
+    customProperties,
     nested,
     customMedia,
     mediaMinMax,
@@ -41,7 +41,7 @@ const plugins = [
     position,
     size,
     autoprefixer({
-        browsers: '> 1%'
+        // browsers: '> 1%'
     }),
     singleCharset,
     reporter

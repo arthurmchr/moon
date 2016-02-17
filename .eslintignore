@@ -3,3 +3,4 @@ app/index.html.source
 app/config.js
 app/media/js/bundle.js
 app/media/js/vendor
+dist

@@ -3,10 +3,11 @@ config.js
 index.html.source
 jspm_packages
 media/css/README.md
-media/css/base
-media/css/components
-media/css/layout
 media/css/main.css
+media/css/base
+media/css/grid
+media/css/layout
+media/css/modules
 media/css/pages
 media/css/utils
 media/css/vendor

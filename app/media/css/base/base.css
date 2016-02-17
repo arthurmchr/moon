@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font: 62.5%/2 var(--text-font-stack);
 }
 
 *,
@@ -10,7 +11,6 @@ input[type="search"] {
 }
 
 body {
-    font: 62.5%/2 var(--text-font-stack);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -29,9 +29,9 @@ button {
     border: 0;
     outline: 0;
 
-    vertical-align: top;
-
     background-color: inherit;
+    text-transform: inherit;
+    vertical-align: top;
 }
 
 hr {
