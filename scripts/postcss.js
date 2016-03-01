@@ -26,25 +26,25 @@ const outputCss = path.join(__dirname, '../app/media/css/bundle.css');
 const env = process.env.NODE_ENV;
 
 const plugins = [
-    easyImport({
-        glob: true
-    }),
-    url,
-    forLoop,
-    mixins,
-    customProperties,
-    nested,
-    customMedia,
-    mediaMinMax,
-    fontPath,
-    clearFix,
-    position,
-    size,
-    autoprefixer({
-        // browsers: '> 1%'
-    }),
-    singleCharset,
-    reporter
+	easyImport({
+		glob: true
+	}),
+	url,
+	forLoop,
+	mixins,
+	customProperties,
+	nested,
+	customMedia,
+	mediaMinMax,
+	fontPath,
+	clearFix,
+	position,
+	size,
+	autoprefixer({
+		// browsers: '> 1%'
+	}),
+	singleCharset,
+	reporter
 ];
 
 if (env === 'production') plugins.push(cssnano);
@@ -52,23 +52,23 @@ if (env === 'production') plugins.push(cssnano);
 const postCssBuilder = postcss(plugins);
 
 function build() {
-    const css = fs.readFileSync(inputCss, 'utf8');
+	const css = fs.readFileSync(inputCss, 'utf8');
 
-    postCssBuilder.process(css, {
-        from: inputCss,
-        to: outputCss,
-        map: {
-            inline: false
-        }
-    })
-    .then((result)=> {
-        fs.writeFileSync(outputCss, result.css);
-        if (result.map) fs.writeFileSync(`${outputCss}.map`, result.map);
-    });
+	postCssBuilder.process(css, {
+		from: inputCss,
+		to: outputCss,
+		map: {
+			inline: false
+		}
+	})
+	.then((result)=> {
+		fs.writeFileSync(outputCss, result.css);
+		if (result.map) fs.writeFileSync(`${outputCss}.map`, result.map);
+	});
 }
 
-if (env === 'development') {
-    chokidar.watch(path.join(__dirname, '../app/media/css/**/*.css'), {
-        ignored: outputCss
-    }).on('all', build);
-} else if (env === 'production') build();
+if (env === 'development')
+	chokidar.watch(path.join(__dirname, '../app/media/css/**/*.css'), {
+		ignored: outputCss
+	}).on('all', build);
+else if (env === 'production') build();

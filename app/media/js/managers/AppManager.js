@@ -2,14 +2,14 @@ const _ = new WeakMap();
 
 class AppManager {
 
-    constructor() {
+	constructor() {
 
-        _.set(this, {});
-    }
+		_.set(this, {});
+	}
 
-    start() {
+	start() {
 
-    }
+	}
 }
 
 export default new AppManager();

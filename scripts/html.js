@@ -8,11 +8,10 @@ const inputHTML = path.join(__dirname, '../app/index.html.source');
 const env = process.env.NODE_ENV;
 
 function build() {
-    preprocessFile(inputHTML, path.join(__dirname, '../app/index.html'), {
-        env
-    });
+	preprocessFile(inputHTML, path.join(__dirname, '../app/index.html'), {
+		env
+	});
 }
 
-if (env === 'development') {
-    chokidar.watch(inputHTML).on('all', build);
-} else if (env === 'production') build();
+if (env === 'development') chokidar.watch(inputHTML).on('all', build);
+else if (env === 'production') build();

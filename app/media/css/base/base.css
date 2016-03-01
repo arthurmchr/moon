@@ -1,42 +1,42 @@
 html {
-    box-sizing: border-box;
-    font: 62.5%/2 var(--text-font-stack);
+	box-sizing: border-box;
+	font: 62.5%/2 var(--text-font-stack);
 }
 
 *,
 *::before,
 *::after,
 input[type="search"] {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 img {
-    vertical-align: top;
+	vertical-align: top;
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+	color: inherit;
+	text-decoration: inherit;
 }
 
 button {
-    padding: 0;
-    border: 0;
-    outline: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
 
-    background-color: inherit;
-    text-transform: inherit;
-    vertical-align: top;
+	background-color: inherit;
+	text-transform: inherit;
+	vertical-align: top;
 }
 
 hr {
-    height: 1px;
-    border: 0;
+	height: 1px;
+	border: 0;
 
-    background-color: black;
+	background-color: black;
 }

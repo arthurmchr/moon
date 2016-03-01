@@ -1,43 +1,43 @@
 <!doctype html>
 <html class="no-js" lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="twitter:card" content="">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image" content="">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:title" content="">
+		<meta name="twitter:card" content="">
+		<meta name="twitter:creator" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:site" content="">
+		<meta name="twitter:title" content="">
 
-        <meta property="og:description" content="">
-        <meta property="og:image" content="">
-        <meta property="og:site_name" content="">
-        <meta property="og:title" content="">
-        <meta property="og:type" content="">
-        <meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+		<meta property="og:site_name" content="">
+		<meta property="og:title" content="">
+		<meta property="og:type" content="">
+		<meta property="og:url" content="">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="media/css/bundle.css">
-    </head>
-    <body>
-        <p>ok</p>
+		<link rel="stylesheet" href="media/css/bundle.css">
+	</head>
+	<body>
+		<p>ok</p>
 
-        <!-- @if env='development' -->
-        <script src="jspm_packages/system.js"></script>
-        <script src="config.js"></script>
-        <script>
-            System.import('media/js/main.js');
-        </script>
-        <!-- @endif -->
+		<!-- @if env='development' -->
+		<script src="jspm_packages/system.js"></script>
+		<script src="config.js"></script>
+		<script>
+			System.import('media/js/main.js');
+		</script>
+		<!-- @endif -->
 
-        <!-- @if env='production' -->
-        <script src="media/js/bundle.js"></script>
-        <!-- @endif -->
-    </body>
+		<!-- @if env='production' -->
+		<script src="media/js/bundle.js"></script>
+		<!-- @endif -->
+	</body>
 </html>
