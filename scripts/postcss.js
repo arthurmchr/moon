@@ -9,6 +9,7 @@ const customProperties = require('postcss-custom-properties');
 const nested = require('postcss-nested');
 const mixins = require('postcss-mixins');
 const customMedia = require('postcss-custom-media');
+const simpleExtend = require('postcss-simple-extend');
 const mediaMinMax = require('postcss-media-minmax');
 const fontPath = require('postcss-fontpath');
 const clearFix = require('postcss-clearfix');
@@ -35,6 +36,7 @@ const plugins = [
 	customProperties,
 	nested,
 	customMedia,
+	simpleExtend,
 	mediaMinMax,
 	fontPath,
 	clearFix,

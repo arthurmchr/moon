@@ -6,6 +6,10 @@
 	display: inline-block !important;
 }
 
+.h-display-flex {
+	display: flex !important;
+}
+
 .h-display-none {
 	display: none !important;
 }
@@ -34,6 +38,10 @@
 	text-align: right !important;
 }
 
+.h-margin-auto {
+	margin: 0 auto !important;
+}
+
 .h-no-margin {
 	margin: 0 !important;
 }
@@ -48,6 +56,10 @@
 
 .h-float-right {
 	float: right !important;
+}
+
+.h-float-left {
+	float: left !important;
 }
 
 .h-no-border {
@@ -76,4 +88,40 @@
 
 .h-no-pointer-events {
 	pointer-events: none !important;
+}
+
+.h-vertical-align-top {
+	vertical-align: top !important;
+}
+
+.h-vertical-align-middle {
+	vertical-align: middle !important;
+}
+
+.h-vertical-align-bottom {
+	vertical-align: bottom !important;
+}
+
+.h-z-index-auto {
+	z-index: auto !important;
+}
+
+.h-text-underline {
+	text-decoration: underline !important;
+}
+
+.h-text-italic {
+	font-style: italic !important;
+}
+
+.h-text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.h-no-text-transform {
+	text-transform: none !important;
+}
+
+.h-font-bold {
+	font-weight: bold !important;
 }

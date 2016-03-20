@@ -1,12 +1,11 @@
 html {
 	box-sizing: border-box;
-	font: 62.5%/2 var(--text-font-stack);
+	font: 62.5%/2 var(--font-stack);
 }
 
 *,
 *::before,
-*::after,
-input[type="search"] {
+*::after {
 	box-sizing: inherit;
 }
 
