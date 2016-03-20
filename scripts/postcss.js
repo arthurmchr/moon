@@ -18,6 +18,7 @@ const forLoop = require('postcss-for');
 const size = require('postcss-size');
 const singleCharset = require('postcss-single-charset');
 const reporter = require('postcss-reporter');
+const verticalRhythm = require('postcss-vertical-rhythm');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -42,6 +43,7 @@ const plugins = [
 	clearFix,
 	position,
 	size,
+	verticalRhythm,
 	autoprefixer({
 		// browsers: '> 1%'
 	}),
