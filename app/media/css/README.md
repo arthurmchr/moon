@@ -1,3 +1,44 @@
+# Guidelines
+
+## Order
+
+```
+/* Dimension */
+box-sizing
+display
+width
+height
+padding
+border
+margin
+outline
+
+/* Position */
+position
+top
+left
+right
+bottom
+float
+vertical-align
+
+/* State */
+visibility
+opacity
+z-index
+transform
+
+/* Font and text */
+color
+font-**
+text-**
+
+/* Others */
+
+/* Transition */
+transition
+```
+
 # Resources
 
 ## CSS

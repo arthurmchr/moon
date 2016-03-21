@@ -1,3 +1,3 @@
-import AppManager from '.managers/AppManager';
+import AppManager from './managers/AppManager';
 
 AppManager.start();
