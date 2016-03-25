@@ -25,6 +25,7 @@ vertical-align
 /* State */
 visibility
 opacity
+overflow
 z-index
 transform
 

@@ -43,7 +43,9 @@ const plugins = [
 	clearFix,
 	position,
 	size,
-	verticalRhythm,
+	verticalRhythm({
+		rootSelector: 'html'
+	}),
 	autoprefixer({
 		// browsers: '> 1%'
 	}),
