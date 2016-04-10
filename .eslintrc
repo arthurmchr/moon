@@ -16,6 +16,7 @@
 		"indent": [2, "tab", {"SwitchCase": 1}],
 		"keyword-spacing": 2,
 		"no-console": 0,
+		"no-debugger": 0,
 		"no-extra-parens": 2,
 		"no-multi-spaces": 2,
 		"no-spaced-func": 2,

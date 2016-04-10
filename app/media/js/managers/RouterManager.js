@@ -4,7 +4,13 @@ class RouterManager {
 
 	constructor() {
 
-		_.set(this, {});
+		_.set(this, {
+			ui: {
+				container: document.querySelector('#ajaxContainer')
+			},
+			currentPage: null,
+			currentPopin: null
+		});
 	}
 
 	start() {
