@@ -20,6 +20,7 @@ System.config({
     "component-emitter": "npm:component-emitter@1.2.0",
     "core-js": "npm:core-js@1.2.1",
     "gsap": "npm:gsap@1.18.2",
+    "json": "github:systemjs/plugin-json@0.1.0",
     "page": "npm:page@1.7.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

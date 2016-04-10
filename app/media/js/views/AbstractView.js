@@ -1,3 +1,4 @@
+import events from '../datas/events.json!json';
 import EmitterManager from '../managers/EmitterManager';
 
 const _ = new WeakMap();
@@ -12,7 +13,7 @@ export default class AbstractView {
 
 		this.resizeHandler = this.resizeHandler.bind(this);
 
-		EmitterManager.on('resizemanager:resize', this.resizeHandler);
+		EmitterManager.on(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 	}
 
 	get el() {
@@ -34,6 +35,6 @@ export default class AbstractView {
 
 	destroy() {
 
-		EmitterManager.off('resizemanager:resize', this.resizeHandler);
+		EmitterManager.off(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 	}
 }

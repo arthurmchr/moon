@@ -1,3 +1,4 @@
+import events from '../datas/events.json!json';
 import EmitterManager from './EmitterManager';
 
 class ResizeManager {
@@ -14,7 +15,7 @@ class ResizeManager {
 
 	resizeHandler() {
 
-		EmitterManager.emit('resizemanager:resize', window.innerWidth, window.innerHeight);
+		EmitterManager.emit(events.RESIZE_MANAGER_RESIZE, window.innerWidth, window.innerHeight);
 	}
 }
 

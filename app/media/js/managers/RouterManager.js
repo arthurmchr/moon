@@ -1,3 +1,6 @@
+import page from 'page';
+import configRoutes from '../datas/routes.json!json';
+
 const _ = new WeakMap();
 
 class RouterManager {
@@ -15,6 +18,17 @@ class RouterManager {
 
 	start() {
 
+		for (const key in configRoutes) {
+
+			page(configRoutes[key], this.switchView);
+		}
+
+		page();
+	}
+
+	switchView(event) {
+
+		console.log(event);
 	}
 }
 

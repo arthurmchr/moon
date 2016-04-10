@@ -1,3 +1,7 @@
+import RouterManager from './RouterManager';
+import ResizeManager from './ResizeManager';
+import LayoutManager from './LayoutManager';
+
 const _ = new WeakMap();
 
 class AppManager {
@@ -9,6 +13,9 @@ class AppManager {
 
 	start() {
 
+		ResizeManager.start();
+		LayoutManager.start();
+		RouterManager.start();
 	}
 }
 
