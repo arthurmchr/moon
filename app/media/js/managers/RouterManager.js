@@ -1,4 +1,5 @@
 import page from 'page';
+
 import configRoutes from '../datas/routes.json!json';
 
 const _ = new WeakMap();

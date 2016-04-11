@@ -72,5 +72,3 @@ $(dev) git merge --no-ff master
 
 - http://fle.github.io/an-efficient-git-workflow-for-midlong-term-projects.html
 - http://nvie.com/posts/a-successful-git-branching-model/
-
-# Roadmap

@@ -1,4 +1,4 @@
-import Modernizr from '../vendor/modernizr';
+import Modernizr from '../vendors/modernizr';
 
 window.requestAnimFrame = Modernizr.prefixed('requestAnimationFrame', window) || function(callback) {
 

@@ -1,4 +1,5 @@
 import events from '../datas/events.json!json';
+
 import EmitterManager from './EmitterManager';
 
 class ResizeManager {
