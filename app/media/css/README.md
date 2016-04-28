@@ -7,7 +7,9 @@
 box-sizing
 display
 width
+max-width
 height
+max-height
 padding
 border
 margin
@@ -26,15 +28,17 @@ vertical-align
 visibility
 opacity
 overflow
+pointer-events
 z-index
 transform
 
 /* Font and text */
 color
 font-**
+line-height
 text-**
 
-/* Others */
+/* Others by alphabetical order */
 
 /* Transition */
 transition

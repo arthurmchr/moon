@@ -8,7 +8,7 @@ const formatter = cli.getFormatter();
 chokidar.watch(path.join(__dirname, '../app/media/js/**/*.js'), {
 	ignored: [
 		path.join(__dirname, '../silex/public/media/js/bundle.js'),
-		path.join(__dirname, '../silex/public/media/js/vendor')
+		path.join(__dirname, '../silex/public/media/js/vendors')
 	]
 }).on('all', (event, file)=> {
 	const report = cli.executeOnFiles([file]);
