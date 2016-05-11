@@ -12,4 +12,6 @@
 	--font-size-42: 4.236rem;
 	--font-size-68: 6.853rem;
 	--font-size-110: 11.089rem;
+
+	--ease-expo-in-out: cubic-bezier(1, 0, 0, 1);
 }

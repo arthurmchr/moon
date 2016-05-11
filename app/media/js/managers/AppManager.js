@@ -1,20 +1,18 @@
-import RouterManager from './RouterManager';
-import ResizeManager from './ResizeManager';
-import LayoutManager from './LayoutManager';
+// import Private from '../helpers/Private';
 
-const _ = new WeakMap();
+import './ResizeManager';
+import './LayoutManager';
+import RouterManager from './RouterManager';
+
+// const wm = new Private();
+// let _;
 
 class AppManager {
 
 	constructor() {
 
-		_.set(this, {});
-	}
+		// _ = wm.set(this, {});
 
-	start() {
-
-		ResizeManager.start();
-		LayoutManager.start();
 		RouterManager.start();
 	}
 }

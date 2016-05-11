@@ -1,10 +1,14 @@
 export default class Private {
 
-	constructor(ctx) {
+	constructor() {
 
-		const weakMap = new WeakMap();
-		weakMap.set(ctx, {});
+		this.weakMap = new WeakMap();
+	}
 
-		return weakMap.get(ctx);
+	set(ctx, params) {
+
+		this.weakMap.set(ctx, params);
+
+		return this.weakMap.get(ctx);
 	}
 }

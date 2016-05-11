@@ -1,14 +1,13 @@
-const _ = new WeakMap();
+// import Private from '../helpers/Private';
+
+// const wm = new Private();
+// let _;
 
 class LayoutManager {
 
 	constructor() {
 
-		_.set(this, {});
-	}
-
-	start() {
-
+		// _ = wm.set(this, {});
 	}
 }
 

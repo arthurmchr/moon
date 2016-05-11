@@ -1,28 +1,30 @@
 import page from 'page';
 
+import Private from '../helpers/Private';
 import configRoutes from '../datas/routes.json!json';
 
-const _ = new WeakMap();
+const wm = new Private();
+let _;
 
 class RouterManager {
 
 	constructor() {
 
-		_.set(this, {
+		_ = wm.set(this, {
 			ui: {
-				container: document.querySelector('#ajaxContainer')
+
 			},
 			currentPage: null,
 			currentPopin: null
 		});
-	}
-
-	start() {
 
 		for (const key in configRoutes) {
 
 			page(configRoutes[key], this.switchView);
 		}
+	}
+
+	start() {
 
 		page();
 	}

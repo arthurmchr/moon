@@ -7,9 +7,6 @@ class ResizeManager {
 	constructor() {
 
 		this.resizeHandler = this.resizeHandler.bind(this);
-	}
-
-	start() {
 
 		window.addEventListener('resize', this.resizeHandler);
 	}
