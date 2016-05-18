@@ -4,6 +4,7 @@
 npm install -g jspm
 npm install
 jspm install
+ln -s hooks/pre-commit .git/hooks/pre-commit
 ```
 
 Then 3 commands are available :
