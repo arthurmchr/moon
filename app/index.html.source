@@ -35,9 +35,9 @@
 
 		<!-- @if env='development' -->
 		<script src="jspm_packages/system.js"></script>
-		<script src="config.js"></script>
+		<script src="jspm.config.js"></script>
 		<script>
-			System.import('media/js/main.js');
+			SystemJS.import('media/js/main.js');
 		</script>
 		<!-- @endif -->
 

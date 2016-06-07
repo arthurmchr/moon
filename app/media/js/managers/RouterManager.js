@@ -3,24 +3,18 @@ import page from 'page';
 import routes from '../datas/routes.json!json';
 import events from '../datas/events.json!json';
 
-import Private from '../helpers/Private';
 import EmitterManager from '../managers/EmitterManager';
 import HomeView from '../views/HomeView';
-
-const wm = new Private();
-let _;
 
 class RouterManager {
 
 	constructor() {
 
-		_ = wm.set(this, {
-			ui: {
+		this.switchPage = this.switchPage.bind(this);
+		this.switchPopin = this.switchPopin.bind(this);
 
-			},
-			currentPage: null,
-			currentPopin: null
-		});
+		this._currentPage = null;
+		this._currentPopin = null;
 
 		for (const key in routes) {
 
@@ -40,19 +34,19 @@ class RouterManager {
 
 		console.log(event);
 
-		if (_.currentPage) {
+		if (this._currentPage) {
 
-			_.currentPage.transitionOut();
+			this._currentPage.transitionOut();
 		}
 
 		switch (event.pathname) {
 
 			case routes.HOME:
-				_.currentPage = new HomeView();
+				this._currentPage = new HomeView();
 				break;
 		}
 
-		_.currentPage.transitionIn();
+		this._currentPage.transitionIn();
 	}
 
 	switchPopin(/*popinName*/) {

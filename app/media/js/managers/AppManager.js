@@ -1,17 +1,11 @@
-// import Private from '../helpers/Private';
-
 import './ResizeManager';
 import './LayoutManager';
-import RouterManager from './RouterManager';
 
-// const wm = new Private();
-// let _;
+import RouterManager from './RouterManager';
 
 class AppManager {
 
 	constructor() {
-
-		// _ = wm.set(this, {});
 
 		RouterManager.start();
 	}

@@ -5,6 +5,7 @@
 ```
 /* Dimension */
 box-sizing
+align-items
 display
 width
 max-width

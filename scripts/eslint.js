@@ -11,6 +11,7 @@ chokidar.watch(path.join(__dirname, '../app/media/js/**/*.js'), {
 		path.join(__dirname, '../silex/public/media/js/vendors')
 	]
 }).on('all', (event, file)=> {
+
 	const report = cli.executeOnFiles([file]);
 	const message = formatter(report.results);
 

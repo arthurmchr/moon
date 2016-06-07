@@ -1,6 +1,6 @@
 **/*.html
 app/index.html.source
-app/config.js
+app/jspm.config.js
 app/media/js/bundle.js
 app/media/js/vendors/
 dist/

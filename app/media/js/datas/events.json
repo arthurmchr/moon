@@ -2,5 +2,5 @@
 	"RESIZE_MANAGER_RESIZE": "resize-manager:resize",
 	"TRANSITION_END": "transition:end",
 	"ROUTER_PAGE": "router:page",
-	"ROUTER_POPIN": "router:popin",
+	"ROUTER_POPIN": "router:popin"
 }
