@@ -59,7 +59,7 @@
   },
   "jspm": {
     "name": "moon",
-    "main": "media/js/main.js",
+    "main": "main.js",
     "directories": {
       "baseURL": "app"
     },

@@ -1,12 +1,18 @@
 SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
-    "github:": "jspm_packages/github/",
-    "moon": "media/js/",
-    "moon/": "src/"
+    "github:": "jspm_packages/github/"
   },
   browserConfig: {
-    "baseURL": "/"
+    "baseURL": "/",
+    "paths": {
+      "moon/": "media/js/"
+    }
+  },
+  nodeConfig: {
+    "paths": {
+      "moon/": "media/js/"
+    }
   },
   devConfig: {
     "map": {
@@ -16,7 +22,7 @@ SystemJS.config({
   transpiler: "plugin-babel",
   packages: {
     "moon": {
-      "main": "media/js/main.js",
+      "main": "main.js",
       "meta": {
         "*.js": {
           "loader": "plugin-babel"
@@ -42,19 +48,6 @@ SystemJS.config({
     "process": "github:jspm/nodelibs-process@0.2.0-alpha"
   },
   packages: {
-    "npm:babel-polyfill@6.9.1": {
-      "map": {
-        "regenerator-runtime": "npm:regenerator-runtime@0.9.5",
-        "core-js": "npm:core-js@2.4.0",
-        "babel-runtime": "npm:babel-runtime@6.9.2"
-      }
-    },
-    "npm:babel-runtime@6.9.2": {
-      "map": {
-        "core-js": "npm:core-js@2.4.0",
-        "regenerator-runtime": "npm:regenerator-runtime@0.9.5"
-      }
-    },
     "npm:page@1.7.1": {
       "map": {
         "path-to-regexp": "npm:path-to-regexp@1.2.1"
@@ -63,6 +56,19 @@ SystemJS.config({
     "npm:path-to-regexp@1.2.1": {
       "map": {
         "isarray": "npm:isarray@0.0.1"
+      }
+    },
+    "npm:babel-polyfill@6.9.1": {
+      "map": {
+        "core-js": "npm:core-js@2.4.0",
+        "babel-runtime": "npm:babel-runtime@6.9.2",
+        "regenerator-runtime": "npm:regenerator-runtime@0.9.5"
+      }
+    },
+    "npm:babel-runtime@6.9.2": {
+      "map": {
+        "core-js": "npm:core-js@2.4.0",
+        "regenerator-runtime": "npm:regenerator-runtime@0.9.5"
       }
     }
   }
