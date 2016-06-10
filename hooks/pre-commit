@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git diff --cached --name-only --diff-filter=ACM | grep "^app\/media\/js\/.*.js$" | xargs ./node_modules/.bin/eslint
+
 git diff --cached --name-only --diff-filter=ACM | if grep "app/jspm.config.js"
 then
 	./node_modules/.bin/jspm unbundle
