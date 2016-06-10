@@ -2,5 +2,6 @@
 app/index.html.source
 app/jspm.config.js
 app/media/js/bundle.js
+app/media/js/build.js
 app/media/js/vendors/
 dist/

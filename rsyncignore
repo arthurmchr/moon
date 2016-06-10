@@ -3,3 +3,5 @@ config.js
 index.html.source
 jspm_packages/
 media/css/README.md
+media/js/bundle.js
+media/js/bundle.js.map

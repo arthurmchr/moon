@@ -5,10 +5,10 @@
   "author": "Arthur Muchir",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
+    "clean": "rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/js/build.js app/media/js/build.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
     "html": "node scripts/html.js",
     "css": "node scripts/postcss.js",
-    "watch": "parallelshell 'npm run watch:html' 'npm run watch:css' 'npm run watch:lint' 'live-server --ignore=\"index.html.source,media/css/base,media/css/modules,media/css/layout,media/css/pages,media/css/utils,media/css/vendor,media/css/main.css,media/css/bundle.css.map\" app'",
+    "watch": "parallelshell 'jspm bundle media/js/main.js app/media/js/bundle.js -wid' 'npm run watch:html' 'npm run watch:css' 'npm run watch:lint' 'live-server --ignore=\"index.html.source,media/css/base,media/css/modules,media/css/layout,media/css/pages,media/css/utils,media/css/vendor,media/css/main.css,media/css/bundle.css.map\" app'",
     "watch:lint": "node scripts/eslint.js",
     "watch:html": "NODE_ENV=development npm run html",
     "watch:css": "NODE_ENV=development npm run css",
@@ -16,7 +16,7 @@
     "build:lint": "eslint app/media/js/**/*.js",
     "build:html": "NODE_ENV=production npm run html",
     "build:css": "NODE_ENV=production npm run css",
-    "build:js": "jspm bundle-sfx media/js/main.js app/media/js/bundle.js --minify",
+    "build:js": "jspm build media/js/main.js app/media/js/build.js --minify",
     "deploy": "npm run build && rsync -r --exclude-from=rsyncignore app/ dist"
   },
   "repository": {
@@ -64,7 +64,6 @@
       "baseURL": "app"
     },
     "dependencies": {
-      "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "component-emitter": "npm:component-emitter@^1.2.1",
       "json": "github:systemjs/plugin-json@^0.1.2",
       "page": "npm:page@^1.7.1"
@@ -73,8 +72,6 @@
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
     },
     "peerDependencies": {
-      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
     }
   }

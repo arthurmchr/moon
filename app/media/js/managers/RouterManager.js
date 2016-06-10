@@ -32,8 +32,6 @@ class RouterManager {
 
 	switchPage(event) {
 
-		console.log(event);
-
 		if (this._currentPage) {
 
 			this._currentPage.transitionOut();
