@@ -1,5 +1,5 @@
 #!/bin/sh
-
+echo "start"
 files=$(git diff --cached --name-only --diff-filter=ACM | grep "^app\/media\/js\/.*.js$")
 
 echo $files | xargs ./node_modules/.bin/eslint
@@ -16,5 +16,5 @@ then
 	./node_modules/.bin/jspm unbundle
 	git add app/jspm.config.js
 fi
-echo "ok"
+echo "end"
 exit 0
