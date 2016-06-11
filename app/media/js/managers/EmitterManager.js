@@ -1,3 +1,3 @@
 import Emitter from 'component-emitter'
 
-export default new Emitter()
+export default new Emitter();
