@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "start"
+
 files=$(git diff --cached --name-only --diff-filter=ACM | grep "^app\/media\/js\/.*.js$")
 
 echo $files | xargs ./node_modules/.bin/eslint
@@ -7,7 +7,7 @@ echo $files | xargs ./node_modules/.bin/eslint
 rc=$?
 
 if [[ $rc != 0 ]] ; then
-	print "ESLint check failed, commit denied"
+	echo "ESLint check failed, commit denied"
 	exit 1
 fi
 
@@ -16,5 +16,5 @@ then
 	./node_modules/.bin/jspm unbundle
 	git add app/jspm.config.js
 fi
-echo "end"
+
 exit 0
