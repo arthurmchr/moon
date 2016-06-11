@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 files=$(git diff --cached --name-only --diff-filter=ACM | grep "^app\/media\/js\/.*.js$")
 
