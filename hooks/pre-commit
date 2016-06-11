@@ -5,9 +5,10 @@ files=$(git diff --cached --name-only --diff-filter=ACM | grep "^app\/media\/js\
 echo $files | xargs ./node_modules/.bin/eslint
 
 rc=$?
+
 if [[ $rc != 0 ]] ; then
-	echo "ESLint check failed, commit denied"
-	exit $rc
+	print "ESLint check failed, commit denied"
+	exit 1
 fi
 
 git diff --cached --name-only --diff-filter=ACM | if grep "app/jspm.config.js"
@@ -15,3 +16,5 @@ then
 	./node_modules/.bin/jspm unbundle
 	git add app/jspm.config.js
 fi
+
+exit 0
