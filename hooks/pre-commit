@@ -16,5 +16,5 @@ then
 	./node_modules/.bin/jspm unbundle
 	git add app/jspm.config.js
 fi
-echo "la"
+echo "ok"
 exit 0
