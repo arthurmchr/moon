@@ -1,0 +1,9 @@
+deployment:
+	staging:
+		branch: staging
+		commands:
+			- ssh
+			- cd ~/
+			- npm install
+			- jspm install
+			- npm run deploy
