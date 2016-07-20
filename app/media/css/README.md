@@ -5,8 +5,8 @@
 ```
 /* Dimension */
 box-sizing
-align-items
 display
+align-items
 width
 max-width
 height
@@ -19,9 +19,9 @@ outline
 /* Position */
 position
 top
+bottom
 left
 right
-bottom
 float
 vertical-align
 

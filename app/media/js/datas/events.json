@@ -1,5 +1,6 @@
 {
 	"RESIZE_MANAGER_RESIZE": "resize-manager:resize",
+	"RAF_MANAGER_TICK": "raf-manager:tick",
 	"TRANSITION_END": "transition:end",
 	"ROUTER_PAGE": "router:page",
 	"ROUTER_POPIN": "router:popin"
