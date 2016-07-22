@@ -42,6 +42,7 @@ hr {
 	background-color: black;
 }
 
-img {
+img,
+canvas {
 	vertical-align: top;
 }

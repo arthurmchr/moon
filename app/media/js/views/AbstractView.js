@@ -6,10 +6,12 @@ export default class AbstractView {
 
 	constructor(selector) {
 
+		this.resizeHandler = this.resizeHandler.bind(this);
+
 		this._el = document.querySelector(`#${selector}`);
 		this._events = [];
 
-		EmitterManager.on(events.RESIZE_MANAGER_RESIZE, this.resizeHandler.bind(this));
+		EmitterManager.on(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 	}
 
 	addHandlers(events) {

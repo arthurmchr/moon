@@ -7,7 +7,9 @@ class RafManager {
 
 	constructor() {
 
-		// TweenMax.ticker.addEventListener('tick', this.tickHandler.bind(this));
+		// this.tickHandler = this.tickHandler.bind(this);
+
+		// TweenMax.ticker.addEventListener('tick', this.tickHandler);
 	}
 
 	tickHandler() {
