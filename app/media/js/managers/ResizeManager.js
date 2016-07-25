@@ -1,4 +1,4 @@
-import events from '../datas/events.json!json';
+import events from '../datas/events.json';
 
 import EmitterManager from './EmitterManager';
 

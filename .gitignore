@@ -1,12 +1,9 @@
 .DS_Store
 /app/index.html
-/app/jspm_packages/
 /app/media/css/bundle.css
 /app/media/css/bundle.css.map
 /app/media/js/bundle.js
 /app/media/js/bundle.js.map
-/app/media/js/build.js
-/app/media/js/build.js.map
 /dist/
 /node_modules/
 /npm-debug.log

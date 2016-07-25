@@ -5,18 +5,19 @@
   "author": "Arthur Muchir",
   "license": "MIT",
   "scripts": {
-    "clean": "jspm unbundle && rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/js/build.js app/media/js/build.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
+    "clean": "rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
     "html": "node scripts/html.js",
     "css": "node scripts/postcss.js",
-    "watch": "parallelshell 'jspm bundle media/js/main.js app/media/js/bundle.js -wid' 'npm run watch:html' 'npm run watch:css' 'npm run watch:lint' 'live-server --ignore=\"index.html.source,media/css/base,media/css/modules,media/css/layout,media/css/pages,media/css/utils,media/css/vendor,media/css/main.css,media/css/bundle.css.map\" app'",
-    "watch:lint": "node scripts/eslint.js",
+    "watch": "parallelshell 'npm run watch:lint' 'npm run watch:js' 'npm run watch:html' 'npm run watch:css' 'live-server --no-browser --ignorePattern=\"^(?!(media/css/bundle\\.css|media/js/bundle\\.js)$)(.*\\.(js|css|source|map)$)\" app'",
+    "watch:lint": "esw -w app/media/js",
+    "watch:js": "rollup -c -w --environment BUILD:development",
     "watch:html": "NODE_ENV=development npm run html",
     "watch:css": "NODE_ENV=development npm run css",
-    "build": "npm run clean && npm run build:lint && npm run build:html && npm run build:css && npm run build:js",
-    "build:lint": "eslint app/media/js/**/*.js",
+    "build": "npm run clean && npm run build:lint && npm run build:js && npm run build:html && npm run build:css",
+    "build:lint": "esw app/media/js",
+    "build:js": "rollup -c -m --environment BUILD:production",
     "build:html": "NODE_ENV=production npm run html",
     "build:css": "NODE_ENV=production npm run css",
-    "build:js": "jspm build media/js/main.js app/media/js/build.js --minify",
     "deploy": "npm run build && rsync -r --exclude-from=rsyncignore app/ dist"
   },
   "repository": {
@@ -27,16 +28,21 @@
     "url": "https://github.com/arthurmuchir/moon/issues"
   },
   "keywords": [
-    "JSPM",
     "LiveReload",
-    "PostCSS"
+    "PostCSS",
+    "CSSnano",
+    "Autoprefixer",
+    "Babel",
+    "Rollup",
+    "ESLint"
   ],
   "devDependencies": {
     "autoprefixer": "6.3.7",
+    "babel-preset-es2015-rollup": "1.1.1",
     "chokidar": "1.6.0",
     "cssnano": "3.7.3",
     "eslint": "3.1.0",
-    "jspm": "0.17.0-beta.17",
+    "eslint-watch": "2.1.13",
     "live-server": "1.0.0",
     "parallelshell": "2.0.0",
     "postcss": "5.1.0",
@@ -52,27 +58,17 @@
     "postcss-reporter": "1.4.1",
     "postcss-simple-extend": "1.0.0",
     "postcss-single-charset": "1.0.0",
-    "postcss-size": "1.0.0",
     "postcss-url": "5.1.2",
     "postcss-vertical-rhythm": "1.1.5",
-    "preprocess": "3.1.0"
+    "preprocess": "3.1.0",
+    "rollup": "0.34.1",
+    "rollup-plugin-babel": "2.6.1",
+    "rollup-plugin-json": "2.0.1",
+    "rollup-plugin-uglify": "1.0.1",
+    "rollup-watch": "2.5.0"
   },
-  "jspm": {
-    "name": "moon",
-    "main": "main.js",
-    "directories": {
-      "baseURL": "app"
-    },
-    "dependencies": {
-      "component-emitter": "npm:component-emitter@^1.2.1",
-      "json": "github:systemjs/plugin-json@^0.1.2",
-      "page": "npm:page@^1.7.1"
-    },
-    "devDependencies": {
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
-    },
-    "peerDependencies": {
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
-    }
+  "dependencies": {
+    "component-emitter": "1.2.1",
+    "page": "1.7.1"
   }
 }

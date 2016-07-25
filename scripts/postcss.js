@@ -14,7 +14,6 @@ const mediaMinMax = require('postcss-media-minmax');
 const fontPath = require('postcss-fontpath');
 const clearFix = require('postcss-clearfix');
 const forLoop = require('postcss-for');
-const size = require('postcss-size');
 const singleCharset = require('postcss-single-charset');
 const reporter = require('postcss-reporter');
 const verticalRhythm = require('postcss-vertical-rhythm');
@@ -40,7 +39,6 @@ const plugins = [
 	mediaMinMax,
 	fontPath,
 	clearFix,
-	size,
 	verticalRhythm({
 		rootSelector: 'html'
 	}),

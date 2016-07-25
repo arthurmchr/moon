@@ -1,7 +1,7 @@
 import page from 'page';
 
-import routes from '../datas/routes.json!json';
-import events from '../datas/events.json!json';
+import routes from '../datas/routes.json';
+import events from '../datas/events.json';
 
 import EmitterManager from '../managers/EmitterManager';
 import HomeView from '../views/HomeView';
