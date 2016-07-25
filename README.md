@@ -1,16 +1,14 @@
 # Installation
 
 ```
-npm install -g jspm
 npm install
-jspm install
 
 cd .git/hooks
 ln -s ../../hooks/pre-commit
 ```
 
 Then 3 commands are available :
-- `npm run watch` watch compiled files and start an HTTP server with CSS livereload
+- `npm run watch` watch compiled files and start an HTTP server with JS / CSS livereload
 - `npm run build` clean and build needed files (HTML / CSS / JS)
 - `npm run deploy` same as build but copy all needed files in a `dist` directory
 
