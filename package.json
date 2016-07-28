@@ -8,7 +8,7 @@
     "clean": "rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
     "html": "node scripts/html.js",
     "css": "node scripts/postcss.js",
-    "watch": "parallelshell 'npm run watch:lint' 'npm run watch:js' 'npm run watch:html' 'npm run watch:css' 'live-server --no-browser --ignorePattern=\"^(?!(media/css/bundle\\.css|media/js/bundle\\.js)$)(.*\\.(js|css|source|map)$)\" app'",
+    "watch": "parallelshell 'npm run watch:lint' 'npm run watch:js' 'npm run watch:html' 'npm run watch:css' 'live-server --no-browser --ignorePattern=\"^(?!(bundle\\.css|bundle\\.js)$)(.*\\.(js|css|source|map)$)\" app'",
     "watch:lint": "esw -w app/media/js",
     "watch:js": "rollup -c -w --environment BUILD:development",
     "watch:html": "NODE_ENV=development npm run html",
@@ -63,7 +63,9 @@
     "preprocess": "3.1.0",
     "rollup": "0.34.1",
     "rollup-plugin-babel": "2.6.1",
+    "rollup-plugin-commonjs": "^3.3.1",
     "rollup-plugin-json": "2.0.1",
+    "rollup-plugin-node-resolve": "^1.7.1",
     "rollup-plugin-uglify": "1.0.1",
     "rollup-watch": "2.5.0"
   },

@@ -3,6 +3,12 @@ export function toArray(els) {
 	return Array.prototype.slice.call(els);
 }
 
+export function shuffleArray(o) {
+	for (let j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+
+	return o;
+}
+
 export function getAncestor(el, className) {
 
 	while ((el = el.parentElement) && !el.classList.contains(className));

@@ -35,16 +35,12 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 
+		<script src="media/js/bundle.js"></script>
+
 		<!-- @if env='development' -->
-		<script src="jspm_packages/system.js"></script>
-		<script src="jspm.config.js"></script>
-		<script>
-			SystemJS.import('moon');
-		</script>
 		<!-- @endif -->
 
 		<!-- @if env='production' -->
-		<script src="media/js/build.js"></script>
 		<!-- @endif -->
 	</body>
 </html>

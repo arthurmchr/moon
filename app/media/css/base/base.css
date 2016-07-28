@@ -43,6 +43,7 @@ hr {
 }
 
 img,
-canvas {
+canvas,
+video {
 	vertical-align: top;
 }
