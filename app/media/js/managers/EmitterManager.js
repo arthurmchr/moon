@@ -1,3 +1,3 @@
-import Emitter from 'component-emitter';
+import EventEmitter from 'events';
 
-export default new Emitter();
+export default new EventEmitter();

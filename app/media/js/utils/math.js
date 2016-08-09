@@ -15,7 +15,7 @@ export function randomInt(min, max) {
 
 export function randomFloat(min, max, decimals = 1) {
 
-	return (Math.random() * (min - max) + max).toFixed(decimals);
+	return parseFloat((Math.random() * (min - max) + max).toFixed(decimals), 10);
 }
 
 export function toDegree(radians) {

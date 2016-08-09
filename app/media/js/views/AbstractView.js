@@ -37,13 +37,17 @@ export default class AbstractView {
 
 	transitionIn() {
 
+		this._el.classList.add('is-visible');
 	}
 
 	transitionOut() {
 
+		EmitterManager.emit(events.TRANSITION_START_NEXT);
 	}
 
 	destroy() {
+
+		this._el.classList.remove('is-visible');
 
 		for (const event of this._events) {
 
@@ -58,8 +62,6 @@ export default class AbstractView {
 		}
 
 		EmitterManager.off(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
-
-		EmitterManager.emit(events.TRANSITION_END);
 	}
 
 	get el() {

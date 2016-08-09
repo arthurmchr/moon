@@ -1,5 +1,6 @@
 import './ResizeManager';
 import './LayoutManager';
+import './VisibilityManager';
 
 import RouterManager from './RouterManager';
 

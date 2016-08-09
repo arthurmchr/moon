@@ -3,15 +3,11 @@
 @custom-media --large (width >= 1200px);
 
 :root {
-	--font-stack: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-stack-sans: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-stack-serif: 'Times New Roman', Times, serif;
 
 	--font-size-10: 1rem;
-	--font-size-16: 1.618rem;
-	--font-size-26: 2.618rem;
-	--font-size-42: 4.236rem;
-	--font-size-68: 6.853rem;
-	--font-size-110: 11.089rem;
+	--font-size-15: 1.5rem;
 
 	--ease-expo-in-out: cubic-bezier(1, 0, 0, 1);
 }

@@ -4,7 +4,6 @@ const chokidar = require('chokidar');
 
 const postcss = require('postcss');
 const easyImport = require('postcss-easy-import');
-// const url = require('postcss-url');
 const customProperties = require('postcss-custom-properties');
 const nested = require('postcss-nested');
 const mixins = require('postcss-mixins');
@@ -29,7 +28,6 @@ const plugins = [
 	easyImport({
 		glob: true
 	}),
-	// url,
 	forLoop,
 	mixins,
 	customProperties,

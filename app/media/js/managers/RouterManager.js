@@ -3,7 +3,7 @@ import page from 'page';
 import routes from '../datas/routes.json';
 import events from '../datas/events.json';
 
-import EmitterManager from '../managers/EmitterManager';
+import EmitterManager from './EmitterManager';
 import HomeView from '../views/HomeView';
 
 class RouterManager {
@@ -32,25 +32,38 @@ class RouterManager {
 
 	switchPage(event) {
 
+		let oldPage = null;
+
 		if (this._currentPage) {
 
-			this._currentPage.transitionOut();
+			oldPage = this._currentPage;
+
+			EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
+
+				this._currentPage.transitionIn();
+			});
 		}
 
-		switch (event.pathname) {
+		switch (event.pathname || event) {
 
 			case routes.HOME:
 				this._currentPage = new HomeView();
 				break;
+
+			default:
+				console.error('No route found for', event.pathname);
 		}
 
-		this._currentPage.transitionIn();
+		if (oldPage) oldPage.transitionOut();
+		else this._currentPage.transitionIn();
 	}
 
 	switchPopin(/*popinName*/) {
 
 		// switch (popinName) {
 
+			// default:
+			// 	this._currentPopin = null;
 		// }
 	}
 }

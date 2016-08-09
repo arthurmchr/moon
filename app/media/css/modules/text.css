@@ -1,0 +1,6 @@
+.text {
+
+	&--15 {
+		font-size: var(--font-size-15);
+	}
+}

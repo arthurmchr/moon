@@ -1,8 +1,3 @@
-export function toArray(els) {
-
-	return Array.prototype.slice.call(els);
-}
-
 export function shuffleArray(o) {
 	for (let j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 
@@ -18,7 +13,7 @@ export function getAncestor(el, className) {
 
 export function getIndex(el, parent) {
 
-	return toArray(parent.children).indexOf(el);
+	return Array.from(parent.children).indexOf(el);
 }
 
 export function getURLParameters() {

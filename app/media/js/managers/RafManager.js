@@ -1,6 +1,6 @@
 import events from '../datas/events.json';
 
-import EmitterManager from '../managers/EmitterManager';
+import EmitterManager from './EmitterManager';
 // import TweenMax from 'gsap';
 
 class RafManager {

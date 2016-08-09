@@ -1,0 +1,7 @@
+.page {
+	display: none;
+
+	&.is-visible {
+		display: block;
+	}
+}

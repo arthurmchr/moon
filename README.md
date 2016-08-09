@@ -1,5 +1,7 @@
 # Installation
 
+First you should install [EditorConfig](http://editorconfig.org/) package in your code editor. Then,
+
 ```
 npm install
 
