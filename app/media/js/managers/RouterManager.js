@@ -60,11 +60,15 @@ class RouterManager {
 
 	switchPopin(/*popinName*/) {
 
+		// if (this._currentPopin) this._currentPopin.transitionOut();
+
 		// switch (popinName) {
 
 			// default:
 			// 	this._currentPopin = null;
 		// }
+
+		// if (this._currentPopin) this._currentPopin.transitionIn();
 	}
 }
 

@@ -3,13 +3,9 @@
 
 # TEAM
 
-	<name> -- <role> -- <twitter>
-
-# THANKS
-
-	<name>
+	Arthur Muchir -- Web developer at 84.Paris -- https://www.linkedin.com/in/arthurmuchir -- https://twitter.com/arthurmuchir
 
 # TECHNOLOGY COLOPHON
 
-	CSS3, HTML5
-	Apache Server Configs, jQuery, Modernizr, Normalize.css
+	HTML5, CSS3, PostCSS, Autoprefixer, CSSnano
+	JavaScript, Babel, Rollup, ESLint, Uglify, LiveReload

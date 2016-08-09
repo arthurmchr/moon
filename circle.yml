@@ -5,5 +5,4 @@ deployment:
             - ssh
             - cd ~/
             - npm install
-            - jspm install
             - npm run deploy
