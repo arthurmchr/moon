@@ -1,4 +1,4 @@
-import page from 'page';
+// import page from 'page';
 
 import routes from '../datas/routes.json';
 import events from '../datas/events.json';
@@ -11,23 +11,24 @@ class RouterManager {
 	constructor() {
 
 		this.switchPage = this.switchPage.bind(this);
-		this.switchPopin = this.switchPopin.bind(this);
+		// this.switchPopin = this.switchPopin.bind(this);
 
 		this._currentPage = null;
-		this._currentPopin = null;
+		// this._currentPopin = null;
 
-		for (const key in routes) {
+		// for (const key in routes) {
 
-			page(routes[key], this.switchPage);
-		}
+		// 	page(routes[key], this.switchPage);
+		// }
 
 		EmitterManager.on(events.ROUTER_PAGE, this.switchPage);
-		EmitterManager.on(events.ROUTER_POPIN, this.switchPopin);
+		// EmitterManager.on(events.ROUTER_POPIN, this.switchPopin);
 	}
 
 	start() {
 
-		page();
+		// page();
+		this.switchPage(routes.HOME);
 	}
 
 	switchPage(event) {
@@ -51,36 +52,36 @@ class RouterManager {
 				break;
 
 			default:
-				console.error('No route found for', event.pathname);
+				console.error('No route found for', event.pathname || event);
 		}
 
 		if (oldPage) oldPage.transitionOut();
 		else this._currentPage.transitionIn();
 	}
 
-	switchPopin(popinName) {
+	// switchPopin(popinName) {
 
-		let oldPopin = null;
+	// 	let oldPopin = null;
 
-		if (this._currentPopin) {
+	// 	if (this._currentPopin) {
 
-			oldPopin = this._currentPopin;
+	// 		oldPopin = this._currentPopin;
 
-			EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
+	// 		EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
 
-				this._currentPopin.transitionIn();
-			});
-		}
+	// 			this._currentPopin.transitionIn();
+	// 		});
+	// 	}
 
-		switch (popinName) {
+	// 	switch (popinName) {
 
-			default:
-				this._currentPopin = null;
-		}
+	// 		default:
+	// 			this._currentPopin = null;
+	// 	}
 
-		if (oldPopin) oldPopin.transitionOut();
-		else if (this._currentPopin) this._currentPopin.transitionIn();
-	}
+	// 	if (oldPopin) oldPopin.transitionOut();
+	// 	else if (this._currentPopin) this._currentPopin.transitionIn();
+	// }
 }
 
 export default new RouterManager();

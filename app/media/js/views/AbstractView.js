@@ -23,13 +23,7 @@ export default class AbstractView {
 		for (const event of events) {
 
 			if (!event.el.length) event.el.addEventListener(event.type, event.cb);
-			else {
-
-				for (const el of event.el) {
-
-					el.addEventListener(event.type, event.cb);
-				}
-			}
+			else for (const el of event.el) el.addEventListener(event.type, event.cb);
 		}
 	}
 
@@ -54,13 +48,7 @@ export default class AbstractView {
 		for (const event of this._events) {
 
 			if (!event.el.length) event.el.removeEventListener(event.type, event.cb);
-			else {
-
-				for (const el of event.el) {
-
-					el.removeEventListener(event.type, event.cb);
-				}
-			}
+			else for (const el of event.el) el.removeEventListener(event.type, event.cb);
 		}
 
 		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);

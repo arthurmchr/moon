@@ -66,12 +66,12 @@
     "rollup-plugin-commonjs": "3.3.1",
     "rollup-plugin-image": "1.0.2",
     "rollup-plugin-json": "2.0.1",
-    "rollup-plugin-node-builtins": "1.0.7",
     "rollup-plugin-node-resolve": "2.0.0",
     "rollup-plugin-uglify": "1.0.1",
     "rollup-watch": "2.5.0"
   },
   "dependencies": {
+    "component-emitter": "1.2.1",
     "page": "1.7.1"
   }
 }
