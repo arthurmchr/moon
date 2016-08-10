@@ -9,6 +9,7 @@ export default class HomeView extends AbstractView {
 
 	transitionOut() {
 
+		super.transitionOut();
 		super.destroy();
 	}
 }
