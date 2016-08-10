@@ -58,17 +58,28 @@ class RouterManager {
 		else this._currentPage.transitionIn();
 	}
 
-	switchPopin(/*popinName*/) {
+	switchPopin(popinName) {
 
-		// if (this._currentPopin) this._currentPopin.transitionOut();
+		let oldPopin = null;
 
-		// switch (popinName) {
+		if (this._currentPopin) {
 
-			// default:
-			// 	this._currentPopin = null;
-		// }
+			oldPopin = this._currentPopin;
 
-		// if (this._currentPopin) this._currentPopin.transitionIn();
+			EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
+
+				this._currentPopin.transitionIn();
+			});
+		}
+
+		switch (popinName) {
+
+			default:
+				this._currentPopin = null;
+		}
+
+		if (oldPopin) oldPopin.transitionOut();
+		else if (this._currentPopin) this._currentPopin.transitionIn();
 	}
 }
 

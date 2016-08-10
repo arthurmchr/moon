@@ -9,6 +9,8 @@ export default class AbstractView {
 		this.resizeHandler = this.resizeHandler.bind(this);
 
 		this._el = document.querySelector(`#${selector}`);
+		this._isPopin = this.constructor.name.indexOf('Popin') > -1 ? true : false;
+
 		this._events = [];
 
 		EmitterManager.on(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
@@ -61,7 +63,7 @@ export default class AbstractView {
 			}
 		}
 
-		EmitterManager.off(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
+		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 	}
 
 	get el() {
