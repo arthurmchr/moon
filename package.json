@@ -71,6 +71,7 @@
     "rollup-watch": "2.5.0"
   },
   "dependencies": {
+    "auto-bind": "0.1.0",
     "component-emitter": "1.2.1",
     "page": "1.7.1"
   }

@@ -1,12 +1,13 @@
 import events from '../datas/events.json';
 
+import autoBind from 'auto-bind';
 import EmitterManager from '../managers/EmitterManager';
 
 export default class AbstractView {
 
 	constructor(selector) {
 
-		this.resizeHandler = this.resizeHandler.bind(this);
+		autoBind(this);
 
 		this._el = document.querySelector(`#${selector}`);
 		this._isPopin = this.constructor.name.indexOf('Popin') > -1 ? true : false;

@@ -23,7 +23,7 @@ When we start a new feature or a bugfix, we create a new branch from `dev` :
 ```
 $(dev) git checkout -b featureName
 ...
-$(featureName) git add -A
+$(featureName) git add .
 $(featureName) git commit -m "commit message"
 ```
 
@@ -53,7 +53,7 @@ $(dev) git push origin --delete featureName
 
 ## Stables
 
-We first need to tag our `dev` branch, then create a new branch :
+We first need to tag our `dev` branch, then merge on master :
 
 ```
 $(dev) git tag x.x
