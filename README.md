@@ -3,10 +3,10 @@
 First you should install [EditorConfig](http://editorconfig.org/) package in your code editor. Then,
 
 ```
-npm install
-
 cd .git/hooks
 ln -s ../../hooks/pre-commit
+
+npm install
 ```
 
 Then 3 commands are available :

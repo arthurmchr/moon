@@ -10,7 +10,6 @@ const mixins = require('postcss-mixins');
 const customMedia = require('postcss-custom-media');
 const simpleExtend = require('postcss-simple-extend');
 const mediaMinMax = require('postcss-media-minmax');
-const fontPath = require('postcss-fontpath');
 const clearFix = require('postcss-clearfix');
 const forLoop = require('postcss-for');
 const singleCharset = require('postcss-single-charset');
@@ -35,7 +34,6 @@ const plugins = [
 	customMedia,
 	simpleExtend,
 	mediaMinMax,
-	fontPath,
 	clearFix,
 	verticalRhythm({
 		rootSelector: 'html'
@@ -72,7 +70,10 @@ function build() {
 if (env === 'development') {
 
 	chokidar.watch(path.join(__dirname, '../app/media/css/**/*.css'), {
-		ignored: outputCss
+		ignored: outputCss,
+		ignoreInitial: true
 	}).on('all', build);
+
+	build();
 }
 else if (env === 'production') build();

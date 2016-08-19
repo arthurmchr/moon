@@ -1,6 +1,6 @@
 /*@font-face {
 	font-family: Lato;
-	font-path: '/media/fonts/Lato-Bold';
+	src: url(/media/fonts/lato.woff) format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
