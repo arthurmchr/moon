@@ -10,11 +10,11 @@ const mixins = require('postcss-mixins');
 const customMedia = require('postcss-custom-media');
 const simpleExtend = require('postcss-simple-extend');
 const mediaMinMax = require('postcss-media-minmax');
+const objectFit = require('postcss-object-fit-images');
 const clearFix = require('postcss-clearfix');
 const forLoop = require('postcss-for');
 const singleCharset = require('postcss-single-charset');
 const reporter = require('postcss-reporter');
-const verticalRhythm = require('postcss-vertical-rhythm');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
@@ -35,9 +35,7 @@ const plugins = [
 	simpleExtend,
 	mediaMinMax,
 	clearFix,
-	verticalRhythm({
-		rootSelector: 'html'
-	}),
+	objectFit,
 	autoprefixer({
 		// browsers: '> 1%'
 	}),

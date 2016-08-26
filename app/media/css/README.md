@@ -6,6 +6,7 @@
 /* Dimension */
 box-sizing
 display
+vertical-align
 align-items
 width
 max-width
@@ -23,7 +24,6 @@ bottom
 left
 right
 float
-vertical-align
 
 /* State */
 visibility

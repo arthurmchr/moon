@@ -1,6 +1,7 @@
 // import page from 'page';
 
 import routes from '../datas/routes.json';
+// import popins from '../datas/popins.json';
 import events from '../datas/events.json';
 
 import EmitterManager from './EmitterManager';
@@ -69,7 +70,7 @@ class RouterManager {
 
 	// 		EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
 
-	// 			this._currentPopin.transitionIn();
+	// 			if (this._currentPopin) this._currentPopin.transitionIn();
 	// 		});
 	// 	}
 
