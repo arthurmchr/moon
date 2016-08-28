@@ -8,6 +8,7 @@ const inputHTML = path.join(__dirname, '../app/index.html.source');
 const env = process.env.NODE_ENV;
 
 function build() {
+
 	preprocessFile(inputHTML, path.join(__dirname, '../app/index.html'), {
 		env
 	});

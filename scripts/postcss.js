@@ -18,8 +18,8 @@ const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
-const inputCss = path.join(__dirname, '../app/media/css/main.css');
-const outputCss = path.join(__dirname, '../app/media/css/bundle.css');
+const inputCSS = path.join(__dirname, '../app/media/css/main.css');
+const outputCSS = path.join(__dirname, '../app/media/css/bundle.css');
 
 const env = process.env.NODE_ENV;
 
@@ -48,27 +48,28 @@ if (env === 'production') plugins.push(cssnano);
 const postCssBuilder = postcss(plugins);
 
 function build() {
-	const css = fs.readFileSync(inputCss, 'utf8');
+
+	const css = fs.readFileSync(inputCSS, 'utf8');
 
 	postCssBuilder.process(css, {
-		from: inputCss,
-		to: outputCss,
+		from: inputCSS,
+		to: outputCSS,
 		map: {
 			inline: false
 		}
 	})
 	.then((result)=> {
 
-		fs.writeFileSync(outputCss, result.css);
+		fs.writeFileSync(outputCSS, result.css);
 
-		if (result.map) fs.writeFileSync(`${outputCss}.map`, result.map);
+		if (result.map) fs.writeFileSync(`${outputCSS}.map`, result.map);
 	});
 }
 
 if (env === 'development') {
 
 	chokidar.watch(path.join(__dirname, '../app/media/css/**/*.css'), {
-		ignored: outputCss,
+		ignored: outputCSS,
 		ignoreInitial: true
 	}).on('all', build);
 
