@@ -4,10 +4,21 @@ import uglify from 'rollup-plugin-uglify';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import image from 'rollup-plugin-image';
+import autoTransform from 'rollup-plugin-auto-transform';
+import globals from 'rollup-plugin-node-globals';
+import builtins from 'rollup-plugin-node-builtins';
 
 const plugins = [
-	nodeResolve(),
-	commonjs(),
+	autoTransform(),
+	globals(),
+	builtins(),
+	nodeResolve({
+		jsnext: true,
+		browser: true
+	}),
+	commonjs({
+		ignoreGlobal: true
+	}),
 	json(),
 	image(),
 	babel({
