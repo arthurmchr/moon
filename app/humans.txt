@@ -8,4 +8,4 @@
 # TECHNOLOGY COLOPHON
 
 	HTML5, CSS3, PostCSS, Autoprefixer, CSSnano
-	JavaScript, Babel, Rollup, ESLint, Uglify, LiveReload
+	JavaScript, Babel, Browserify, ESLint, Uglify, LiveReload
