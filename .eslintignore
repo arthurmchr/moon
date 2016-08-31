@@ -1,6 +1,5 @@
 **/*.html
 app/index.html.source
 app/media/js/bundle.js
-app/media/js/build.js
 app/media/js/vendors/
 dist/
