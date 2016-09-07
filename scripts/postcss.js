@@ -11,7 +11,6 @@ const customMedia = require('postcss-custom-media');
 const simpleExtend = require('postcss-simple-extend');
 const mediaMinMax = require('postcss-media-minmax');
 const objectFit = require('postcss-object-fit-images');
-const clearFix = require('postcss-clearfix');
 const hexRGBA = require('postcss-hexrgba');
 const forLoop = require('postcss-for');
 const singleCharset = require('postcss-single-charset');
@@ -35,7 +34,6 @@ const plugins = [
 	customMedia,
 	simpleExtend,
 	mediaMinMax,
-	clearFix,
 	objectFit,
 	hexRGBA,
 	autoprefixer({
