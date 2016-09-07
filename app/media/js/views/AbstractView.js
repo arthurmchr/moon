@@ -19,7 +19,7 @@ export default class AbstractView {
 
 	addHandlers(events) {
 
-		this._events = events;
+		this._events = this._events.concat(events);
 
 		for (const event of events) {
 

@@ -12,3 +12,70 @@
 
 	transform: translate(-50%, -50%);
 }
+
+@define-mixin clearfix {
+
+	&::after {
+		content: "";
+
+		display: block;
+
+		clear: both;
+	}
+}
+
+@define-mixin ratio $width, $height {
+	display: block;
+	height: 0;
+	padding: 0 0 calc($height / $width * 100%) 0;
+
+	position: relative;
+
+	overflow: hidden;
+}
+
+@define-placeholder triangle-default {
+	display: inline-block;
+	width: 0;
+	height: 0;
+}
+
+@define-mixin triangle-down $size, $color {
+	@extend triange-default;
+
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-bottom: $size solid $color;
+}
+
+@define-mixin triangle-up $size, $color {
+	@extend triange-default;
+
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-top: $size solid $color;
+}
+
+@define-mixin triangle-left $size, $color {
+	@extend triange-default;
+
+	border-left: $size solid $color;
+	border-top: $size solid transparent;
+	border-bottom: $size solid transparent;
+}
+
+@define-mixin triangle-right $size, $color {
+	@extend triange-default;
+
+	border-top: $size solid transparent;
+	border-right: $size solid $color;
+	border-bottom: $size solid transparent;
+}
+
+@define-mixin circle $size, $color {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+
+	color: $color;
+}
