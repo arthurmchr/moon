@@ -37,7 +37,7 @@ const plugins = [
 	objectFit,
 	hexRGBA,
 	autoprefixer({
-		// browsers: '> 1%'
+		// browsers: '> 1%, last 2 versions, Firefox ESR'
 	}),
 	singleCharset,
 	reporter

@@ -33,6 +33,8 @@ We follow `dev` branch evolution and regularly ensure that our code still works 
 $(featureName) git rebase dev
 ```
 
+Only rebase if you are working alone on your feature branch, otherwhile do a merge !
+
 When our feature is completed, we do a last rebase as described above. Thanks to this :
 
 - we ensure that the maintainer will be able to merge easily

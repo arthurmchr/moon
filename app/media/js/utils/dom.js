@@ -37,3 +37,8 @@ export function getURLParameters() {
 
 	return params;
 }
+
+export function isTouch() {
+
+	return 'ontouchstart' in window || navigator.maxTouchPoints;
+}

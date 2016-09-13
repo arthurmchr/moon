@@ -31,7 +31,6 @@ opacity
 overflow
 pointer-events
 z-index
-transform
 
 /* Font and text */
 color
@@ -41,7 +40,8 @@ text-**
 
 /* Others by alphabetical order */
 
-/* Transition */
+/* Transform & transition */
+transform
 transition
 ```
 

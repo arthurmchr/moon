@@ -16,7 +16,7 @@
 @define-mixin clearfix {
 
 	&::after {
-		content: "";
+		content: '';
 
 		display: block;
 
