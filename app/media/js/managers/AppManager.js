@@ -7,6 +7,10 @@ class AppManager {
 
 	constructor() {
 
+	}
+
+	start() {
+
 		RouterManager.start();
 	}
 }

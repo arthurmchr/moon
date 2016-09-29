@@ -72,10 +72,8 @@
 	border-bottom: $size solid transparent;
 }
 
-@define-mixin circle $size, $color {
+@define-mixin circle $size {
 	width: $size;
 	height: $size;
 	border-radius: 50%;
-
-	color: $color;
 }

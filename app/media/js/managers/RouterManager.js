@@ -1,9 +1,8 @@
-// import page from 'page';
-
 import routes from '../datas/routes.json';
-// import popins from '../datas/popins.json';
+// import routesPopin from '../datas/routes-popin.json';
 import events from '../datas/events.json';
 
+// import page from 'page';
 import EmitterManager from './EmitterManager';
 import HomeView from '../views/HomeView';
 
@@ -22,8 +21,8 @@ class RouterManager {
 		// 	page(routes[key], this.switchPage);
 		// }
 
-		EmitterManager.on(events.ROUTER_PAGE, this.switchPage);
-		// EmitterManager.on(events.ROUTER_POPIN, this.switchPopin);
+		EmitterManager.on(events.PAGE, this.switchPage);
+		// EmitterManager.on(events.POPIN, this.switchPopin);
 	}
 
 	start() {
@@ -40,9 +39,11 @@ class RouterManager {
 
 			oldPage = this._currentPage;
 
-			EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
+			EmitterManager.once(events.VIEW_NEXT, ()=> {
 
-				this._currentPage.transitionIn();
+				this._currentPage.transitionIn({
+					prvPageName: oldPage.constructor.className
+				});
 			});
 		}
 
@@ -56,8 +57,18 @@ class RouterManager {
 				console.error('No route found for', event.pathname || event);
 		}
 
-		if (oldPage) oldPage.transitionOut();
-		else this._currentPage.transitionIn();
+		if (oldPage) {
+
+			oldPage.transitionOut({
+				nxtPageName: this._currentPage.constructor.className
+			});
+		}
+		else {
+
+			this._currentPage.transitionIn({
+				prvPageName: null
+			});
+		}
 	}
 
 	// switchPopin(popinName) {
@@ -68,7 +79,7 @@ class RouterManager {
 
 	// 		oldPopin = this._currentPopin;
 
-	// 		EmitterManager.once(events.TRANSITION_START_NEXT, ()=> {
+	// 		EmitterManager.once(events.VIEW_NEXT, ()=> {
 
 	// 			if (this._currentPopin) this._currentPopin.transitionIn();
 	// 		});

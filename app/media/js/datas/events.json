@@ -3,8 +3,9 @@
 	"RAF_MANAGER_TICK": "raf-manager:tick",
 	"VISIBILITY_MANAGER_SWITCH": "visibility-manager:switch",
 
-	"ROUTER_PAGE": "router:page",
-	"ROUTER_POPIN": "router:popin",
+	"PAGE": "page",
+	"POPIN": "popin",
 
-	"TRANSITION_START_NEXT": "transition:startnext"
+	"VIEW_NEXT": "view:next",
+	"VIEW_DESTROYED": "view:destroyed"
 }

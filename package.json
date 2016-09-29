@@ -10,12 +10,12 @@
     "css": "node scripts/postcss.js",
     "watch": "parallelshell 'npm run watch:lint' 'npm run watch:js' 'npm run watch:html' 'npm run watch:css' 'browser-sync start -c browser-sync.config.js'",
     "watch:lint": "esw -w app/media/js",
-    "watch:js": "watchify app/media/js/main.js -vd -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -o app/media/js/bundle.js",
+    "watch:js": "watchify app/media/js/main.js -vd -t browserify-shim -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -o app/media/js/bundle.js",
     "watch:html": "NODE_ENV=development npm run html",
     "watch:css": "NODE_ENV=development npm run css",
     "build": "npm run build:lint && npm run clean && npm run build:js && npm run build:uglify && npm run build:html && npm run build:css",
     "build:lint": "esw app/media/js",
-    "build:js": "browserify app/media/js/main.js -d -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -t [ uglifyify -x .js ] | exorcist app/media/js/bundle.js.map > app/media/js/bundle.js",
+    "build:js": "browserify app/media/js/main.js -d -t browserify-shim -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -t [ uglifyify -x .js ] | exorcist app/media/js/bundle.js.map > app/media/js/bundle.js",
     "build:uglify": "uglifyjs -cm --in-source-map app/media/js/bundle.js.map --source-map app/media/js/bundle.js.map -o app/media/js/bundle.js app/media/js/bundle.js",
     "build:html": "NODE_ENV=production npm run html",
     "build:css": "NODE_ENV=production npm run css",
@@ -38,6 +38,7 @@
     "PostCSS",
     "Uglify"
   ],
+  "browserify-shim": {},
   "devDependencies": {
     "autoprefixer": "6.4.1",
     "babel-preset-es2015": "6.14.0",
@@ -45,6 +46,7 @@
     "brfs": "1.4.3",
     "browser-sync": "2.15.0",
     "browserify": "13.1.0",
+    "browserify-shim": "^3.8.12",
     "chokidar": "1.6.0",
     "cssnano": "3.7.4",
     "eslint": "3.4.0",
@@ -72,6 +74,7 @@
   "dependencies": {
     "auto-bind": "0.1.0",
     "component-emitter": "1.2.1",
+    "gsap": "1.19.0",
     "lodash.throttle": "4.1.1",
     "page": "1.7.1"
   }

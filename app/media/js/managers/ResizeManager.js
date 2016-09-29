@@ -1,7 +1,7 @@
 import events from '../datas/events.json';
 
-import EmitterManager from './EmitterManager';
 import throttle from 'lodash.throttle';
+import EmitterManager from './EmitterManager';
 
 class ResizeManager {
 
