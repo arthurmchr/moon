@@ -4,7 +4,7 @@ export default class HomeView extends AbstractView {
 
 	static get className() {
 
-		return 'HomeView';
+		return __filename.match(new RegExp(/.*\/([a-z]+)\.js$/i))[1];
 	}
 
 	constructor() {

@@ -1,7 +1,7 @@
 import events from '../datas/events.json';
 
 import EmitterManager from './EmitterManager';
-// import TweenMax from 'gsap';
+import {TweenMax} from 'gsap';
 
 class RafManager {
 
@@ -9,7 +9,7 @@ class RafManager {
 
 		this.tickHandler = this.tickHandler.bind(this);
 
-		// TweenMax.ticker.addEventListener('tick', this.tickHandler);
+		TweenMax.ticker.addEventListener('tick', this.tickHandler);
 	}
 
 	tickHandler() {

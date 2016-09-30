@@ -1,4 +1,5 @@
 import routes from '../datas/routes.json';
+// import routesRegex from '../datas/routes-regex.json';
 // import routesPopin from '../datas/routes-popin.json';
 import events from '../datas/events.json';
 
@@ -15,10 +16,17 @@ class RouterManager {
 
 		this._currentPage = null;
 		// this._currentPopin = null;
+		// this._tabRegex = [];
 
 		// for (const key in routes) {
 
 		// 	page(routes[key], this.switchPage);
+		// }
+
+		// for (const key in routesRegex) {
+
+		// 	this._tabRegex[key] = new RegExp(routesRegex[key]);
+		// 	page(this._tabRegex[key], this.switchPage);
 		// }
 
 		EmitterManager.on(events.PAGE, this.switchPage);
@@ -31,8 +39,9 @@ class RouterManager {
 		this.switchPage(routes.HOME);
 	}
 
-	switchPage(event) {
+	switchPage(event, opts) {
 
+		let target = event.pathname || event;
 		let oldPage = null;
 
 		if (this._currentPage) {
@@ -47,10 +56,10 @@ class RouterManager {
 			});
 		}
 
-		switch (event.pathname || event) {
+		switch (target) {
 
 			case routes.HOME:
-				this._currentPage = new HomeView();
+				this._currentPage = new HomeView(opts);
 				break;
 
 			default:
@@ -71,7 +80,7 @@ class RouterManager {
 		}
 	}
 
-	// switchPopin(popinName) {
+	// switchPopin(popinName, opts) {
 
 	// 	let oldPopin = null;
 

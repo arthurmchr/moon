@@ -7,7 +7,7 @@ class ResizeManager {
 
 	constructor() {
 
-		this.resizeHandler = throttle(this.resizeHandler.bind(this), 100, {
+		this.resizeHandler = throttle(this.resizeHandler, 100, {
 			leading: false
 		});
 

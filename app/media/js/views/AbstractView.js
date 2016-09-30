@@ -7,7 +7,7 @@ import EmitterManager from '../managers/EmitterManager';
 export default class AbstractView {
 
 	constructor(selector) {
-
+		console.log(this.constructor.className);
 		autoBind(this);
 
 		this._el = document.querySelector(`#${selector}`);
@@ -31,6 +31,10 @@ export default class AbstractView {
 			if (!event.el.length) event.el.addEventListener(event.type, event.cb);
 			else for (const el of event.el) el.addEventListener(event.type, event.cb);
 		}
+	}
+
+	resizeHandler() {
+
 	}
 
 	transitionIn() {
