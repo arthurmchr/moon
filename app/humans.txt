@@ -3,9 +3,13 @@
 
 # TEAM
 
-	Arthur Muchir -- Web developer at 84.Paris -- https://www.linkedin.com/in/arthurmuchir -- https://twitter.com/arthurmuchir
+	Arthur Muchir -- Web developer at 84.Paris
+	--	http://www.arthur.muchir.fr
+	--	https://www.linkedin.com/in/arthurmuchir
+	--	https://github.com/arthurmuchir
+	--	https://twitter.com/arthurmuchir
 
 # TECHNOLOGY COLOPHON
 
 	HTML5, CSS3, PostCSS, Autoprefixer, CSSnano
-	JavaScript, Babel, Browserify, ESLint, Uglify, LiveReload
+	JavaScript, Babel, Browserify, ESLint, Uglify, LiveReload, Browser-sync
