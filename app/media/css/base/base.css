@@ -42,11 +42,12 @@ hr {
 	background-color: black;
 }
 
-img,
 canvas,
-video,
-svg {
-	vertical-align: top;
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
 }
 
 input:focus {
