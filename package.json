@@ -16,7 +16,7 @@
 		"build": "npm run build:lint && npm run clean && npm run build:js && npm run build:uglify && npm run build:html && npm run build:css",
 		"build:lint": "esw app/media/js",
 		"build:js": "browserify app/media/js/main.js -d -t browserify-shim -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -t [ uglifyify -x .js ] | exorcist app/media/js/bundle.js.map > app/media/js/bundle.js",
-		"build:uglify": "uglifyjs -cm --in-source-map app/media/js/bundle.js.map --source-map app/media/js/bundle.js.map -o app/media/js/bundle.js app/media/js/bundle.js",
+		"build:uglify": "uglifyjs -cm --in-source-map app/media/js/bundle.js.map --source-map app/media/js/bundle.js.map --source-map-url bundle.js.map -o app/media/js/bundle.js app/media/js/bundle.js",
 		"build:html": "NODE_ENV=production npm run html",
 		"build:css": "NODE_ENV=production npm run css",
 		"deploy": "npm run build && rsync -rl --exclude-from=rsyncignore app/ dist"
