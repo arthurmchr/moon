@@ -39,3 +39,19 @@ export function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight
 		ratio: ratio
 	};
 }
+
+export function getPointsDist(p1, p2) {
+
+	return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+}
+
+export function getCoeffDirecteur(p1, p2) {
+
+	const m = (p1.y - p2.y) / (p1.x - p2.x);
+	const p = p1.y - m * p1.x;
+
+	return {
+		m,
+		p
+	};
+}

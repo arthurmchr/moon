@@ -14,6 +14,7 @@ export default class AbstractView {
 		this._isPopin = this.constructor.className.indexOf('Popin') > -1 ? true : false;
 
 		this._events = [];
+
 		this._tl = new TimelineMax();
 
 		EmitterManager.on(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
