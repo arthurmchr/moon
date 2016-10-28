@@ -55,3 +55,8 @@ export function getCoeffDirecteur(p1, p2) {
 		p
 	};
 }
+
+export function prependZero(str, totalNbr, val = 0) {
+
+	return str.toString().length < totalNbr ? prependZero(val.toString() + str, totalNbr) : str;
+}
