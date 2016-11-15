@@ -36,7 +36,7 @@ export function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight
 	return {
 		w: parseInt(srcWidth * ratio, 10),
 		h: parseInt(srcHeight * ratio, 10),
-		ratio: ratio
+		ratio
 	};
 }
 
