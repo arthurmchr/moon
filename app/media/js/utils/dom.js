@@ -12,9 +12,9 @@ export function getAncestor(el, className) {
 	return el;
 }
 
-export function getIndex(el, parent) {
+export function getIndex(el) {
 
-	return Array.from(parent.children).indexOf(el);
+	return Array.from(el.parentNode.children).indexOf(el);
 }
 
 export function getURLParameters() {

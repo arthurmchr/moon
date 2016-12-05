@@ -1,7 +1,7 @@
 html {
 	box-sizing: border-box;
 
-	font: 10px/1.4 var(--font-stack-sans);
+	font-size: resolve(strip(var(--default-font-size)) / 16 * 100)%;
 }
 
 *,
@@ -11,11 +11,15 @@ html {
 }
 
 body {
-	line-height: inherit;
+	font-family: var(--font-stack-sans);
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent;
+
+	background-size: 20px 1px, 1px 20px, 5px 1px, 1px 5px;
+	background-image: linear-gradient(to left, #828282 1px, transparent 1px), linear-gradient(to top, #828282 1px, transparent 1px),
+					  linear-gradient(to left, rgba(130, 130, 130, 0.2) 1px, transparent 1px), linear-gradient(to top, rgba(130, 130, 130, 0.2) 1px, transparent 1px);
 }
 
 a {

@@ -4,6 +4,8 @@
 
 @import 'utils/variables.css';
 @import 'utils/mixins.css';
+@import 'utils/shapes.css';
+@import 'utils/rhythm.css';
 
 @import 'base/base.css';
 @import 'base/fonts.css';

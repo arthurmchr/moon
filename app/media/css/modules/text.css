@@ -1,10 +1,6 @@
-@define-placeholder 10 {
-	font-size: var(--font-size-10);
-}
-
 .text {
 
 	&--10 {
-		@extend 10;
+		@mixin baseline 100px, 0.68;
 	}
 }

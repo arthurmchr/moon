@@ -1,8 +1,9 @@
 import events from '../datas/events.json';
 
 import autoBind from 'auto-bind';
-import {TimelineMax} from 'gsap';
+import {TimelineMax, TweenMax} from 'gsap';
 import EmitterManager from '../managers/EmitterManager';
+import PreloadManager from '../managers/PreloadManager';
 
 export default class AbstractView {
 
@@ -23,13 +24,15 @@ export default class AbstractView {
 	addHandlers(events) {
 
 		if (Array.isArray(events)) this._events = this._events.concat(events);
-		else this._events.push(events);
+		else {
 
-		if (!Array.isArray(events)) events = [events];
+			this._events.push(events);
+			events = [events];
+		}
 
 		for (const evt of events) {
 
-			if (!Array.isArray(evt.el)) evt.el.addEventListener(evt.type, evt.cb);
+			if (!Array.isArray(evt.el) && !(events instanceof NodeList)) evt.el.addEventListener(evt.type, evt.cb);
 			else for (const el of evt.el) el.addEventListener(evt.type, evt.cb);
 		}
 	}
@@ -40,6 +43,8 @@ export default class AbstractView {
 
 	transitionIn() {
 
+		if (this.constructor.requiredAssets && (!Array.isArray(this.constructor.requiredAssets) || Array.isArray(this.constructor.requiredAssets) && this.constructor.requiredAssets.length > 0) && !PreloadManager.isFileLoaded(this.constructor.requiredAssets)) return PreloadManager.add(this.constructor.requiredAssets).start(this.transitionIn);
+
 		this._el.classList.add('is-visible');
 	}
 
@@ -47,6 +52,7 @@ export default class AbstractView {
 
 		this.next();
 		this.destroy(opts);
+		console.log(EmitterManager._callbacks);
 	}
 
 	next() {
@@ -60,13 +66,14 @@ export default class AbstractView {
 
 		for (const evt of this._events) {
 
-			if (!Array.isArray(evt.el)) evt.el.removeEventListener(evt.type, evt.cb);
+			if (!Array.isArray(evt.el) && !(evt.el instanceof NodeList)) evt.el.removeEventListener(evt.type, evt.cb);
 			else for (const el of evt.el) el.removeEventListener(evt.type, evt.cb);
 		}
 
 		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 
 		this._tl.kill();
+		TweenMax.killAll();
 
 		EmitterManager.emit(events.VIEW_DESTROYED);
 	}

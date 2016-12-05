@@ -8,15 +8,18 @@ const customProperties = require('postcss-custom-properties');
 const nested = require('postcss-nested');
 const mixins = require('postcss-mixins');
 const customMedia = require('postcss-custom-media');
-const simpleExtend = require('postcss-simple-extend');
 const mediaMinMax = require('postcss-media-minmax');
 const objectFit = require('postcss-object-fit-images');
 const hexRGBA = require('postcss-hexrgba');
 const forLoop = require('postcss-for');
+const math = require('postcss-math');
+const calc = require('postcss-calc');
 const singleCharset = require('postcss-single-charset');
 const reporter = require('postcss-reporter');
+const functions = require('postcss-functions');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const lost = require('lost');
 
 const inputCSS = path.join(__dirname, '../app/media/css/main.css');
 const outputCSS = path.join(__dirname, '../app/media/css/bundle.css');
@@ -30,14 +33,22 @@ const plugins = [
 	forLoop,
 	mixins,
 	customProperties,
+	math,
 	nested,
 	customMedia,
-	simpleExtend,
 	mediaMinMax,
 	objectFit,
 	hexRGBA,
+	functions({
+		rem: function(val, base = 20) {
+
+			return `${parseFloat(val, 10) / parseFloat(base, 10)}rem`;
+		}
+	}),
+	lost,
+	calc,
 	autoprefixer({
-		// browsers: '> 1%, last 2 versions, Firefox ESR'
+		// browsers: '> 1%, last 2 versions'
 	}),
 	singleCharset,
 	reporter
