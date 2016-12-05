@@ -2,13 +2,19 @@
 @custom-media --desktop (width >= 992px);
 @custom-media --large (width >= 1200px);
 
+@lost gutter resolve(40 / 1440 * 100)%;
+@lost flexbox flex;
+
 :root {
 	--default-font-size: 20px;
 
-	--font-stack-sans: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-stack-sans: proxima-nova, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-stack-serif: 'Times New Roman', Times, serif;
 
 	--ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
 	--ease-quint-in-out: cubic-bezier(0.84, 0, 0.16, 1);
 	--ease-expo-in-out: cubic-bezier(0.9, 0, 0.1, 1);
+
+	--cap-height-proxima-0675: 0.675;
+	--cap-height-proxima-07: 0.7;
 }

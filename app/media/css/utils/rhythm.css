@@ -1,6 +1,0 @@
-@define-mixin baseline $font-size, $cap-height, $margin-bottom: 0px {
-	margin-top: rem(resolve((var(--default-font-size) - $cap-height * $font-size) / 2));
-	margin-bottom: rem(resolve(-1 * (var(--default-font-size) - $cap-height * $font-size) / 2 + $margin-bottom));
-
-	font-size: rem($font-size);
-}

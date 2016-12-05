@@ -40,9 +40,11 @@ const plugins = [
 	objectFit,
 	hexRGBA,
 	functions({
-		rem: function(val, base = 20) {
+		functions: {
+			rem: function(val, base = 20) {
 
-			return `${parseFloat(val, 10) / parseFloat(base, 10)}rem`;
+				return `${parseFloat(val, 10) / parseFloat(base, 10)}rem`;
+			}
 		}
 	}),
 	lost,
