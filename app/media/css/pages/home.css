@@ -1,3 +1,3 @@
 .home {
-	padding-top: 4rem;
+	padding: 4rem resolve(140 / 1440 * 100)vw 0;
 }

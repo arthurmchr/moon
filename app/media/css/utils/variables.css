@@ -2,7 +2,7 @@
 @custom-media --desktop (width >= 992px);
 @custom-media --large (width >= 1200px);
 
-@lost gutter resolve(40 / 1440 * 100)%;
+@lost gutter resolve(40 / 1440 * 100)vw;
 @lost flexbox flex;
 
 :root {

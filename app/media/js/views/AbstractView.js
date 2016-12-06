@@ -43,7 +43,10 @@ export default class AbstractView {
 
 	transitionIn() {
 
-		if (this.constructor.requiredAssets && (!Array.isArray(this.constructor.requiredAssets) || Array.isArray(this.constructor.requiredAssets) && this.constructor.requiredAssets.length > 0) && !PreloadManager.isFileLoaded(this.constructor.requiredAssets)) return PreloadManager.add(this.constructor.requiredAssets).start(this.transitionIn);
+		if (this.constructor.requiredAssets &&
+		(!Array.isArray(this.constructor.requiredAssets) || Array.isArray(this.constructor.requiredAssets) && this.constructor.requiredAssets.length > 0) &&
+		!PreloadManager.isFileLoaded(this.constructor.requiredAssets))
+			return PreloadManager.add(this.constructor.requiredAssets).start(this.transitionIn);
 
 		this._el.classList.add('is-visible');
 	}
