@@ -7,22 +7,4 @@
 	&--15 {
 		@mixin baseline 15px, var(--cap-height-proxima-07);
 	}
-
-	&--20-t {
-		@mixin baseline 20px, var(--cap-height-proxima-0675);
-
-		font-weight: 200;
-	}
-
-	&--20-sb {
-		@mixin baseline 20px, var(--cap-height-proxima-0675);
-
-		font-weight: 600;
-	}
-
-	&--60-sb {
-		@mixin baseline 60px, var(--cap-height-proxima-0675);
-
-		font-weight: 600;
-	}
 }

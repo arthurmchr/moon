@@ -1,7 +1,7 @@
 import events from '../datas/events.json';
 
 import autoBind from 'auto-bind';
-import {TimelineMax, TweenMax} from 'gsap';
+import {TimelineMax} from 'gsap';
 import EmitterManager from '../managers/EmitterManager';
 import PreloadManager from '../managers/PreloadManager';
 
@@ -76,7 +76,6 @@ export default class AbstractView {
 		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 
 		this._tl.kill();
-		TweenMax.killAll();
 
 		EmitterManager.emit(events.VIEW_DESTROYED);
 	}

@@ -19,7 +19,6 @@ const reporter = require('postcss-reporter');
 const functions = require('postcss-functions');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const lost = require('lost');
 
 const inputCSS = path.join(__dirname, '../app/media/css/main.css');
 const outputCSS = path.join(__dirname, '../app/media/css/bundle.css');
@@ -47,7 +46,6 @@ const plugins = [
 			}
 		}
 	}),
-	lost,
 	calc,
 	autoprefixer({
 		// browsers: '> 1%, last 2 versions'

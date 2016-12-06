@@ -30,10 +30,6 @@
 	</head>
 	<body>
 		<div id="home" class="home page">
-			<p class="text--60-sb text--uppercase">Arthur Muchir</p>
-
-			<p class="text--20-sb">Web developer at 84.Paris</p>
-
 			<p class="text--15">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
