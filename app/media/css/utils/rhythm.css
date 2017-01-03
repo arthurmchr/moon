@@ -1,5 +1,5 @@
 @define-mixin text-15 $below, $decal {
-	@mixin baseline $font-size-15, var(--cap-height-proxima-07), $below, $decal;
+	@mixin baseline $font-size-15, map(proxima-s), $below, $decal;
 }
 
 
