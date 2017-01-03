@@ -4,7 +4,6 @@
 }
 
 @define-mixin container $max-width: none {
-	display: flex;
 	max-width: $max-width;
 	margin: 0 auto;
 }
@@ -12,6 +11,7 @@
 @define-mixin column $size, $total {
 
 	.column--$(size)-$(total) {
+		display: inline-block;
 		width: calc((100vw - 2 * var(--margin)) * $size / $total - (var(--gutter) - var(--gutter) * $size / $total));
 	}
 }

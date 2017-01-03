@@ -1,7 +1,3 @@
-@define-mixin text-15 $below {
-	@mixin baseline 15px, var(--cap-height-proxima-07), $below;
-}
-
 .text {
 
 	&--uppercase {
@@ -13,7 +9,7 @@
 	}
 
 	&--15 {
-		font-size: rem(15px, var(--default-font-size));
+		@extend text-15;
 	}
 
 	&--15-rhythm {

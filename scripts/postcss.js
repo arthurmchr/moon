@@ -17,6 +17,7 @@ const forLoop = require('postcss-for');
 const math = require('postcss-math');
 const map = require('postcss-map');
 const calc = require('postcss-calc');
+const strip = require('postcss-strip-units');
 const singleCharset = require('postcss-single-charset');
 const reporter = require('postcss-reporter');
 const functions = require('postcss-functions');
@@ -40,16 +41,17 @@ const plugins = [
 		]
 	}),
 	forLoop,
+	mixins,
 	customProperties,
 	vars,
-	mixins,
 	customMedia,
-	math,
+	strip,
 	nested,
 	mediaMinMax,
 	extend,
 	objectFit,
 	hexRGBA,
+	math,
 	calc,
 	functions({
 		functions: {
