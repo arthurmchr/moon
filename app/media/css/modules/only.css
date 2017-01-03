@@ -1,0 +1,17 @@
+.only {
+
+	&--mob {
+
+		@media(--tablet) {
+			display: none;
+		}
+	}
+
+	&--tablet {
+		display: none;
+
+		@media(--tablet) {
+			display: initial;
+		}
+	}
+}

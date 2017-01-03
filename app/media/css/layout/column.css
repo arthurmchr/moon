@@ -1,0 +1,3 @@
+[class^='column--']:not(:last-child) {
+	margin-right: var(--gutter);
+}

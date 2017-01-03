@@ -1,10 +1,22 @@
+@define-mixin text-15 $below {
+	@mixin baseline 15px, var(--cap-height-proxima-07), $below;
+}
+
 .text {
 
 	&--uppercase {
 		text-transform: uppercase;
 	}
 
+	&--no-wrap {
+		whitespace: nowrap;
+	}
+
 	&--15 {
-		@mixin baseline 15px, var(--cap-height-proxima-07);
+		font-size: rem(15px, var(--default-font-size));
+	}
+
+	&--15-rhythm {
+		@mixin text-15;
 	}
 }

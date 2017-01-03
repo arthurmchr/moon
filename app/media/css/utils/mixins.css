@@ -34,9 +34,10 @@
 	overflow: hidden;
 }
 
-@define-mixin baseline $font-size, $cap-height {
-	position: relative;
-	top: rem(resolve((var(--default-font-size) - $cap-height * $font-size) / 2));
+@define-mixin baseline $font-size, $cap-height, $below: 0 {
+	padding-top: rem(calc((resolve(2 * round(resolve(ceil(resolve($font-size / (var(--default-font-size) * var(--default-line-height)) * var(--default-line-height)))) / 2)) * var(--default-font-size) - $cap-height * $font-size) / 2), var(--default-font-size));
+	margin-bottom: rem(calc(-1 * (resolve(2 * round(resolve(ceil(resolve($font-size / (var(--default-font-size) * var(--default-line-height)) * var(--default-line-height)))) / 2)) * var(--default-font-size) - $cap-height * $font-size) / 2 + $below * var(--default-line-height) * var(--default-font-size)), var(--default-font-size));
 
-	font-size: rem($font-size);
+	font-size: rem($font-size, var(--default-font-size));
+	line-height: resolve(2 * round(resolve(ceil(resolve($font-size / (var(--default-font-size) * var(--default-line-height)) * var(--default-line-height)))) / 2))rem;
 }
