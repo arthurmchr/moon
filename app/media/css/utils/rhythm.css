@@ -2,7 +2,6 @@
 	@mixin baseline $font-size-15, map(proxima-s), $below, $decal;
 }
 
-
 @define-extend text-15 {
 	font-size: rem($font-size-15, var(--default-font-size));
 }

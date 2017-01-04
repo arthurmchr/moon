@@ -62,7 +62,7 @@ const plugins = [
 		}
 	}),
 	autoprefixer({
-		// browsers: 'last 2 versions'
+		browsers: 'last 2 versions'
 	}),
 	singleCharset,
 	reporter
