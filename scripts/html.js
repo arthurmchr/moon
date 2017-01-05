@@ -4,7 +4,7 @@ const chokidar = require('chokidar');
 const preprocessFileSync = require('preprocess').preprocessFileSync;
 
 const inputHTML = path.join(__dirname, '../app/index.html.source');
-const inputJS = path.join(__dirname, '../app/media/js/main.js.source');
+const inputJS = path.join(__dirname, '../app/media/js/managers/RenderManager.js.source');
 
 const env = process.env.NODE_ENV;
 
@@ -19,7 +19,7 @@ function buildHTML() {
 
 function buildJS() {
 
-	preprocessFileSync(inputJS, path.join(__dirname, '../app/media/js/main.js'), {
+	preprocessFileSync(inputJS, path.join(__dirname, '../app/media/js/managers/RenderManager.js'), {
 		env
 	}, {
 		type: 'javascript'

@@ -1,10 +1,9 @@
 .DS_Store
 /app/index.html
+/app/templates/jst.js
 /app/media/css/bundle.css
 /app/media/css/bundle.css.map
 /app/media/js/bundle.js
-/app/media/js/main.js
-/app/media/js/jst.js
 /app/media/js/bundle.js.map
 /dist/
 /node_modules/

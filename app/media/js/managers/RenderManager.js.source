@@ -1,0 +1,23 @@
+// @if env='development'
+import nunjucks from 'nunjucks/browser/nunjucks';
+// @endif
+
+// @if env='production'
+import '../../../templates/jst.js';
+import nunjucks from 'nunjucks/browser/nunjucks-slim'; // eslint-disable-line no-redeclare
+// @endif
+
+class RenderManager {
+
+	constructor() {
+
+		this._env = nunjucks.configure('templates');
+	}
+
+	render(tpl, ctx, cb) {
+
+		this._env.render(tpl, ctx, cb);
+	}
+}
+
+export default new RenderManager();
