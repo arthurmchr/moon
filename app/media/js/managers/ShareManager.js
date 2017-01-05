@@ -46,6 +46,14 @@ class ShareManager {
 			description: description
 		});
 	}
+
+	pinterest(text, url, media) {
+
+		const w = 600;
+		const h = 300;
+
+		window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(media)}&description=${encodeURIComponent(text)}`, 'pinterest', `width=${w},height=${h},top=${(window.innerHeight - h) / 2},left=${(window.innerWidth - w) / 2}`);
+	}
 }
 
 export default new ShareManager();
