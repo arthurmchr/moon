@@ -1,7 +1,7 @@
 const path = require('path');
 const chokidar = require('chokidar');
 
-const preprocessFile = require('preprocess').preprocessFile;
+const preprocessFileSync = require('preprocess').preprocessFileSync;
 
 const inputHTML = path.join(__dirname, '../app/index.html.source');
 
@@ -9,8 +9,10 @@ const env = process.env.NODE_ENV;
 
 function build() {
 
-	preprocessFile(inputHTML, path.join(__dirname, '../app/index.html'), {
+	preprocessFileSync(inputHTML, path.join(__dirname, '../app/index.html'), {
 		env
+	}, {
+		type: 'html'
 	});
 }
 
