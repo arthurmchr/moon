@@ -60,7 +60,6 @@ export default class AbstractView {
 
 		this.next();
 		this.destroy(opts);
-		console.log(EmitterManager._callbacks);
 	}
 
 	next() {
