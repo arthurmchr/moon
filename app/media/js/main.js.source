@@ -1,0 +1,11 @@
+// @if env='development'
+import 'nunjucks/browser/nunjucks';
+// @endif
+
+// @if env='production'
+import 'nunjucks/browser/nunjucks-slim';
+// @endif
+
+import AppManager from './managers/AppManager';
+
+AppManager.start();

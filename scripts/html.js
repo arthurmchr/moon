@@ -1,18 +1,38 @@
 const path = require('path');
 const chokidar = require('chokidar');
 
-const preprocessFile = require('preprocess').preprocessFile;
+const preprocessFileSync = require('preprocess').preprocessFileSync;
 
 const inputHTML = path.join(__dirname, '../app/index.html.source');
+const inputJS = path.join(__dirname, '../app/media/js/main.js.source');
 
 const env = process.env.NODE_ENV;
 
-function build() {
+function buildHTML() {
 
-	preprocessFile(inputHTML, path.join(__dirname, '../app/index.html'), {
+	preprocessFileSync(inputHTML, path.join(__dirname, '../app/index.html'), {
 		env
+	}, {
+		type: 'html'
 	});
 }
 
-if (env === 'development') chokidar.watch(inputHTML).on('all', build);
-else if (env === 'production') build();
+function buildJS() {
+
+	preprocessFileSync(inputJS, path.join(__dirname, '../app/media/js/main.js'), {
+		env
+	}, {
+		type: 'javascript'
+	});
+}
+
+if (env === 'development') {
+
+	chokidar.watch(inputHTML).on('all', buildHTML);
+	chokidar.watch(inputJS).on('all', buildJS);
+}
+else if (env === 'production') {
+
+	buildHTML();
+	buildJS();
+}

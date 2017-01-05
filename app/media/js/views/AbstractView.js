@@ -4,6 +4,7 @@ import autoBind from 'auto-bind';
 import {TimelineMax} from 'gsap';
 import EmitterManager from '../managers/EmitterManager';
 import PreloadManager from '../managers/PreloadManager';
+import RenderManager from '../managers/RenderManager';
 
 export default class AbstractView {
 

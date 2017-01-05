@@ -5,20 +5,21 @@
   "author": "Arthur Muchir <arthur.muchir@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist app/index.html app/media/js/bundle.js app/media/js/bundle.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
     "html": "node scripts/html.js",
+    "clean": "rm -rf dist app/index.html app/media/js/main.js app/media/js/jst.js app/media/js/bundle.js app/media/js/bundle.js.map app/media/css/bundle.css app/media/css/bundle.css.map",
     "css": "node scripts/postcss.js",
-    "watch": "npm run clean && parallelshell 'npm run watch:lint' 'npm run watch:js' 'npm run watch:html' 'npm run watch:css' 'browser-sync start -c browser-sync.config.js'",
+    "watch": "npm run clean && parallelshell 'npm run watch:html' 'npm run watch:lint' 'npm run watch:js' 'npm run watch:css' 'browser-sync start -c browser-sync.config.js'",
     "watch:lint": "esw -w app/media/js",
     "watch:js": "watchify app/media/js/main.js -vd -t browserify-shim -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -o app/media/js/bundle.js",
     "watch:html": "NODE_ENV=development npm run html",
     "watch:css": "NODE_ENV=development npm run css",
-    "build": "npm run build:lint && npm run clean && npm run build:js && npm run build:uglify && npm run build:html && npm run build:css",
+    "build": "npm run build:lint && npm run clean && npm run build:html && npm run build:js && npm run build:uglify && npm run build:css",
     "build:lint": "esw app/media/js",
     "build:js": "browserify app/media/js/main.js -d -t browserify-shim -t [ babelify --presets [ es2015 ] --ignore app/media/js/vendors/** ] -t brfs -t [ uglifyify -x .js ] | exorcist app/media/js/bundle.js.map > app/media/js/bundle.js",
     "build:uglify": "uglifyjs -cm --in-source-map app/media/js/bundle.js.map --source-map app/media/js/bundle.js.map --source-map-url bundle.js.map -o app/media/js/bundle.js app/media/js/bundle.js",
     "build:html": "NODE_ENV=production npm run html",
     "build:css": "NODE_ENV=production npm run css",
+    "build:template": "nunjucks-precompile app/templates > app/media/js/jst.js",
     "deploy": "npm run build && rsync -rl --exclude-from=rsyncignore app/ dist"
   },
   "repository": {
@@ -36,7 +37,8 @@
     "CSSnano",
     "ESLint",
     "PostCSS",
-    "Uglify"
+    "Uglify",
+    "Twig"
   ],
   "browserify-shim": {},
   "devDependencies": {
@@ -52,6 +54,7 @@
     "eslint": "3.11.0",
     "eslint-watch": "2.1.14",
     "exorcist": "0.4.0",
+    "nunjucks": "3.0.0",
     "parallelshell": "2.0.0",
     "postcss": "5.2.6",
     "postcss-calc": "5.3.1",
