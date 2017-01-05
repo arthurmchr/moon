@@ -14,9 +14,9 @@ class RenderManager {
 		this._env = nunjucks.configure('templates');
 	}
 
-	render(tpl, ctx, cb) {
+	render(tpl, ctx) {
 
-		this._env.render(tpl, ctx, cb);
+		return this._env.render(tpl, ctx);
 	}
 }
 

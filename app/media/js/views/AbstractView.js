@@ -4,13 +4,17 @@ import autoBind from 'auto-bind';
 import {TimelineMax} from 'gsap';
 import EmitterManager from '../managers/EmitterManager';
 import PreloadManager from '../managers/PreloadManager';
-// import RenderManager from '../managers/RenderManager';
+import RenderManager from '../managers/RenderManager';
 
 export default class AbstractView {
 
 	constructor(selector) {
 		console.log(this.constructor.className);
 		autoBind(this);
+
+		const tpl = RenderManager.render(`${selector}.html`);
+
+		document.querySelector('#wrapper').insertAdjacentHTML('afterbegin', tpl);
 
 		this._el = document.querySelector(`#${selector}`);
 		this._isPopin = this.constructor.className.indexOf('Popin') > -1 ? true : false;
@@ -77,6 +81,8 @@ export default class AbstractView {
 		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 
 		this._tl.kill();
+
+		this._el.parentNode.removeChild(this._el);
 
 		EmitterManager.emit(events.VIEW_DESTROYED);
 	}
