@@ -4,6 +4,8 @@
 /app/media/css/bundle.css.map
 /app/media/js/bundle.js
 /app/media/js/bundle.js.map
+/app/media/js/managers/RenderManager.js
+/app/templates/
 /dist/
 /node_modules/
 /npm-debug.log
