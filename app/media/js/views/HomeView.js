@@ -16,17 +16,4 @@ export default class HomeView extends AbstractView {
 
 		super('home');
 	}
-
-	testAsync() {
-
-		return new Promise((resolve)=> {
-
-			resolve(3);
-		});
-	}
-
-	async test() {
-
-		console.log(await this.testAsync());
-	}
 }
