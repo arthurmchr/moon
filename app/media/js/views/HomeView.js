@@ -1,3 +1,4 @@
+import ArticleStore from '../stores/ArticleStore';
 import AbstractView from './AbstractView';
 
 export default class HomeView extends AbstractView {
@@ -12,8 +13,8 @@ export default class HomeView extends AbstractView {
 		return [];
 	}
 
-	constructor() {
+	constructor(opts) {
 
-		super('home');
+		super('home', ArticleStore.getByID(opts));
 	}
 }
