@@ -8,11 +8,11 @@ import RenderManager from '../managers/RenderManager';
 
 export default class AbstractView {
 
-	constructor(selector) {
+	constructor(selector, ctx) {
 		console.log(this.constructor.className);
 		autoBind(this);
 
-		const tpl = RenderManager.render(`${selector}.html`);
+		const tpl = RenderManager.render(`${selector}.html`, ctx);
 
 		document.querySelector('#wrapper').insertAdjacentHTML('afterbegin', tpl);
 
