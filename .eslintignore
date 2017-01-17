@@ -2,4 +2,5 @@
 app/index.html.source
 app/media/js/bundle.js
 app/media/js/vendors/
+app/templates/jst.js
 dist/
