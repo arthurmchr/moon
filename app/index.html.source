@@ -25,10 +25,22 @@
 
 		<link rel="stylesheet" href="media/css/bundle.css">
 
+		<!--[if lte IE 9]>
+		<style>
+			#outdated {
+				display: block;
+			}
+		</style>
+		<![endif]-->
+
 		<script src="https://use.typekit.net/qpb5kye.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body>
+		<div id="outdated">
+			Browser not supported
+		</div>
+
 		<div id="home" class="page">
 			<p class="text--15-rhythm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

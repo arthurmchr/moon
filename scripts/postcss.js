@@ -31,9 +31,7 @@ const ymlCSS = path.join(__dirname, '../app/media/css');
 const env = process.env.NODE_ENV;
 
 const plugins = [
-	easyImport({
-		glob: true
-	}),
+	easyImport,
 	map({
 		basePath: ymlCSS,
 		maps: [
