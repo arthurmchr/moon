@@ -8,7 +8,7 @@ $font-size-15: 15px;
 	--default-font-size: 10px;
 	--default-line-height: 2;
 
-	--font-stack-sans: proxima-nova, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-stack-sans: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-stack-serif: 'Times New Roman', Times, serif;
 
 	--ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);

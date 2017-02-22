@@ -1,7 +1,8 @@
 html {
 	box-sizing: border-box;
 
-	font: resolve(strip(var(--default-font-size)) / 16 * 100)%/1.4 var(--font-stack-sans);
+	font-family: var(--font-stack-sans);
+	font-size: resolve(strip(var(--default-font-size)) / 16 * 100)%;
 }
 
 *,
@@ -11,6 +12,7 @@ html {
 }
 
 body {
+	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent;

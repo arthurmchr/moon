@@ -35,6 +35,8 @@
 }
 
 @define-mixin baseline $font-size, $cap-height, $below: 0, $decal: 0 {
+
+	/*  */
 	$lines: resolve(2 * round(resolve(ceil(resolve($font-size / (var(--default-font-size) * var(--default-line-height)) * var(--default-line-height)))) / 2));
 	$rhythm: ($lines * var(--default-font-size) - $cap-height * $font-size) / 2;
 

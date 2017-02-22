@@ -32,9 +32,6 @@
 			}
 		</style>
 		<![endif]-->
-
-		<script src="https://use.typekit.net/qpb5kye.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body>
 		<div id="outdated">
