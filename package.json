@@ -79,7 +79,7 @@
     "watchify": "3.9.0"
   },
   "dependencies": {
-    "auto-bind": "1.1.0",
+    "auto-bind": "0.1.0",
     "babel-polyfill": "6.23.0",
     "component-emitter": "1.2.1",
     "gsap": "1.19.1",
