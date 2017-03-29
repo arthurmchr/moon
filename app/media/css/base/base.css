@@ -12,6 +12,7 @@ html {
 }
 
 body {
+	letter-spacing: 0.03em;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

@@ -32,7 +32,7 @@ export default class AbstractView {
 
 		events.forEach((evt)=> {
 
-			if (!Array.isArray(evt.el) && !(events instanceof NodeList)) evt.el.addEventListener(evt.type, evt.cb);
+			if (!Array.isArray(evt.el) && !(evt.el instanceof NodeList)) evt.el.addEventListener(evt.type, evt.cb);
 			else evt.el.forEach((el)=> el.addEventListener(evt.type, evt.cb));
 		});
 	}
@@ -62,15 +62,22 @@ export default class AbstractView {
 		EmitterManager.emit(events.VIEW_NEXT);
 	}
 
-	destroy(opts) {
-
-		if (opts.nxtPageName !== this.constructor.className) this._el.classList.remove('is-visible');
+	removeHandlers() {
 
 		this._events.forEach((evt)=> {
 
 			if (!Array.isArray(evt.el) && !(evt.el instanceof NodeList)) evt.el.removeEventListener(evt.type, evt.cb);
 			else evt.el.forEach((el)=> el.removeEventListener(evt.type, evt.cb));
 		});
+
+		this._events = [];
+	}
+
+	destroy(opts) {
+
+		if (opts.nxtPageName !== this.constructor.className) this._el.classList.remove('is-visible');
+
+		this.removeHandlers();
 
 		EmitterManager.removeListener(events.RESIZE_MANAGER_RESIZE, this.resizeHandler);
 

@@ -100,8 +100,18 @@ class RouterManager {
 	// 			this._currentPopin = null;
 	// 	}
 
-	// 	if (oldPopin) oldPopin.transitionOut();
-	// 	else if (this._currentPopin) this._currentPopin.transitionIn();
+	// 	if (oldPopin) {
+
+	// 		oldPopin.transitionOut({
+	// 			nxtPageName: this._currentPopin ? this._currentPopin.constructor.className : null
+	// 		});
+	// 	}
+	// 	else if (this._currentPopin) {
+
+	// 		this._currentPopin.transitionIn({
+	// 			prvPageName: null
+	// 		});
+	// 	}
 	// }
 }
 
