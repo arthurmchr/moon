@@ -11,5 +11,5 @@
 
 # TECHNOLOGY COLOPHON
 
-	HTML5, CSS3, PostCSS, Autoprefixer, CSSnano
+	HTML5, CSS3, PostCSS, Autoprefixer, SCSS, CSSnano
 	JavaScript, Babel, Browserify, ESLint, Uglify, LiveReload, Browser-sync

@@ -49,3 +49,15 @@ export function isFacebookApp() {
 
 	return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1;
 }
+
+export function autoBind(self) {
+
+	for (const key of Object.getOwnPropertyNames(self.constructor.prototype)) {
+
+		const val = self[key];
+
+		if (key !== 'constructor' && typeof val === 'function') self[key] = val.bind(self);
+	}
+
+	return self;
+}

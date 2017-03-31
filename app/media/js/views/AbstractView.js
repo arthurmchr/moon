@@ -1,9 +1,10 @@
 import events from '../datas/events.json';
 
-import autoBind from 'auto-bind';
 import {TimelineMax} from 'gsap';
 import EmitterManager from '../managers/EmitterManager';
 import PreloadManager from '../managers/PreloadManager';
+import {autoBind} from '../utils/dom';
+
 
 export default class AbstractView {
 
